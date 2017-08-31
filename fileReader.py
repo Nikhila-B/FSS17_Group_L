@@ -8,9 +8,8 @@ sym_columns = []
 approved_columns = []
 skipped_rows = []
 
-# TODO: I'd prefer not to pass the index. But, seems necessary if need to leave out
-# rows with bad cells.
-# Note: function is necessary to skip rows in invalid columns.
+# Parses a data row (may be multiple lines) and adds the row to the row_list.
+# TODO: I'd prefer not to pass the index, but it seems necessary to report the row in the error.
 def parseRow(line, row_index):
     row = []
     for c in approved_columns:
@@ -28,7 +27,7 @@ def parseRow(line, row_index):
         row.append(cell)
     row_list.append(row)
 
-# file processing starts here
+# Process file
 with open("small.csv", 'r') as f:
     results = []
     for line in f:
