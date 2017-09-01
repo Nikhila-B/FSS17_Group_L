@@ -28,7 +28,7 @@ def parseRow(line, row_index):
     row_list.append(row)
 
 # Process file
-with open("small.csv", 'r') as f:
+with open("POM3A.csv", 'r') as f:
     results = []
     for line in f:
         words = line.split(',')
