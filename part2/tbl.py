@@ -61,23 +61,49 @@ class Row:
 class Num:
 
     def __init__(self):
-        #self.data = []
-        pass
+        self.n = 0 #Total number of cells
+        self.mu = 0
+        self.m2 = 0
+        self.sd = 0 #standard deviation
+        self.high = (-math.exp(32)) #Heightest Value in the column
+        self.low = (math.exp(32)) #Lowest value in the column
+        self.weight = 1 #weight of the column
 
     # Add a new value to the column, and update column stats
     def update(self, newVal):
         # update count, lo, hi, sd
-        pass
+        self.n += 1 #increasing the counter for each new value
+        if newVal < self.low:
+            self.low = newVal
+        if newVal > self.high:
+            self.high = newVal
+        delta = newVal - self.mu
+        self.mu += delta/self.n
+        self.m2 += delta*(newVal - self.mu)
+        if self.n > 1:
+            self.sd = (self.m2/(self.n - 1))**0.5
+        return
 
     # Return the normalized value
     def norm(self, val):
-        return
+        return (val - self.low)/(self.high - self.low + math.exp(-32))
 
     # Return the distance between two nums
     # Lua - something about watcher?
-    @staticmethod
-    def distance(n1, n2):
-        return
+    #@staticmethod
+    def distance(self, n1, n2):
+        if n1 is None and n2 is None:
+            return 0
+        elif n1 is None:
+            n2 = self.norm(n2)
+            n1 = 1 if n2 < 0.5 else 0
+        elif n2 is None:
+            n1 = self.norm(n1)
+            n2 = 1 if n1 < 0.5 else 0
+        else:
+            n1 = self.norm(n1)
+            n2 = self.norm(n2)
+        return abs(n1-n2)**2
 
 
 class Sym:
