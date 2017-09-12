@@ -7,6 +7,8 @@ approved_cols = []
 num_cols = []
 num_dic = {}
 sym_cols = []
+row_list= []
+skipped_rows = []
 header = True
 #Control Function
 #################
@@ -33,15 +35,16 @@ def cleanRow(txt):
 ##################
 # Using the helper function - to check if col not ignored
 # and convert to number if needed and return out
-def cellsNotIgnoring(line):
+def cellsNotIgnoring(line, row_index):
     out =[]
     col = 0
     #line = cleanRow(line)
     line = line.split(',')
-    i = 0;
-    for word in line:
-        word = word.strip()
-        if header == True:
+
+   
+    if header == True:
+        for i=0, word in line:
+            word = word.strip()
             ignore_col = ignoreCol(word)
             if(not ignore_col):
                 magic_char = word[0]
@@ -53,11 +56,28 @@ def cellsNotIgnoring(line):
                     num_dic = {i, 1}
                 else:
                     sym_cols.append(i)
-        else:
-            print("OKAY non header now") # check for num of cells here 
-            print(" convert between num and sym") # throw error for conversion here
-        i = i + 1;
-    return "done with col filtering"
+                    approved_cols.append(i)
+
+        #Now add the  numeric cols to approved cols:
+        approved_cols.append(num_dic.keys())
+    
+    else:
+        #print("OKAY non header now") # check for num of cells here 
+        #print(" convert between num and sym") # throw error for conversion here
+        row = []
+        for c in approved_columns:
+            cell = line[c]
+            if c in num_columns: # Convert numeric cells to float
+                try:
+                    cell = float(cell)
+                except ValueError:
+                    print("ERROR: Row " + str(row_index) + " has an invalid numeric cell " + str(c))
+                    skipped_rows.append(row_index)
+                    return
+            row.append(cell)
+    
+         row_list.append(row)
+        
 
 #Iterator for each line
 #########################
@@ -73,7 +93,7 @@ def WithEachLine(fileName):
                 i = i + 1
                 line = cleanRow(line) # remove comments and padding
                 if(not incompleteLine(line) and len(line)>0): # not incomplete/blank
-                        cellsNotIgnoring(line)
+                        cellsNotIgnoring(line, i)
                 elif(len(line)>0 and incompleteLine(line)): #incomplete line - multi line record
                     last_line = last_line + line[1:]
                     continue
