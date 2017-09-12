@@ -1,6 +1,6 @@
 ### Explore the effects for different K in K Nearest Neighbor classification.
 
-[Screenshots](!https://github.com/Nikhila-B/FSS17_Group_L/blob/master/workshop/kebrey_changingk.png)
+![Screenshots](https://github.com/Nikhila-B/FSS17_Group_L/blob/master/workshop/kebrey_changingk.png)
 
 ### Explain how we should choose K.
 
