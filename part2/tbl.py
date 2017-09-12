@@ -3,44 +3,81 @@ import math
 class Tbl:
 
     def __init__(self):
-        pass
-        # init instance vars
+        self.rows = {}
+        self.spec = {}
+        self.goals = {}
+        self.less = {}
+        self.more = {}
+        self.name = {}
 
+        self.cols = { "nums":{}, "syms":{}, "all":{} }
+        self.cols_x = { "nums":{}, "syms":{}, "all":{} }
+        self.cols_y = { "nums":{}, "syms":{}, "all":{} }
+        
     # Read in CSV file, call update on every row
     # Make sure handles multiple lines
     def fromCsv(self, fileName):
-        pass
+        self.update({0:"$temp",1:"value"})
+        self.update({0:86, 1:"Hello!"})
 
     # Update the table with a row
     # Calls header for first row, data for rest
     def update(self, cells):
-        pass
-
+        if len(self.spec) == 0:
+            self.header(cells)
+        else:
+            self.data(cells);
+        
     # Create headers from first row of table
     # Calls categories to get spec for the column
     def header(self, cells):
-        pass
+        self.spec = cells
+        for index, cell in cells.items():
+            info = self.categories(cell)
+            header_instance = info["what"]()
+            header_instance.pos = index
+            header_instance.txt = cell
+            header_instance.weight = info["weight"]
+            self.name[header_instance.txt] = header_instance
+            for col_dict in info["included_in"]:
+                col_dict[len(col_dict)] = header_instance
+            
 
     # Looks for special characters in the header text and returns spec for the special character
     # headerTxt - column header text to parse
-    def categories(self, headerTxt):
-        pass
+    def categories(s, headerTxt):
+        spec =  {
+            "$":{ "what": Num, "weight": 1, "included_in": [ s.cols["all"], s.cols_x["all"], s.cols["nums"], s.cols_x["nums"] ]},
+            "<":{ "what": Num, "weight":-1, "included_in": [ s.cols["all"], s.cols_y["all"], s.cols["nums"], s.cols_y["nums"], s.goals, s.less ]},
+            ">":{ "what": Num, "weight": 1, "included_in": [ s.cols["all"], s.cols_y["all"], s.cols["nums"], s.cols_y["nums"], s.goals, s.more ]},
+            "!":{ "what": Sym, "weight": 1, "included_in": [ s.cols["all"], s.cols_y["all"], s.cols["syms"], s.cols_y["syms"] ]},
+            "": { "what": Sym, "weight": 1, "included_in": [ s.cols["all"], s.cols_x["all"], s.cols["syms"], s.cols_x["syms"] ]}
+        }
+        for key, value in spec.items():
+            if key in headerTxt:
+                return value
+        
 
-    # Create new Row and update
+    # Create new Row and update with cells
     # In lua, something called old for (I think) updating rows. Don't worry about it for now.
     def data(self, cells):
-        pass
+        row = Row()
+        row.update(cells, self)
+        self.rows[len(self.rows)] = row
 
 
+        
 class Row:
     
     def __init__(self):
-        pass
-        # Initialize id and cells[]
+        cells = {}
 
     # Update the table headers
     def update(self, cells, table):
-        pass
+        for i,header in table.cols["all"].items():
+            header.update(cells[header.pos])
+            # Probably needs work...
+            
 
     # Get domination score for row, by comparing all pairs of rows
     def dominate(self):
@@ -55,9 +92,9 @@ class Row:
     # Calculate distance between two rows
     @staticmethod
     def distance(r1, r2):
-        pass
+        d,n,p=0,10^-64,0.5
+
         
-#TODO fill out
 class Num:
 
     def __init__(self):
@@ -67,7 +104,7 @@ class Num:
         self.sd = 0 #standard deviation
         self.high = (-math.exp(32)) #Heightest Value in the column
         self.low = (math.exp(32)) #Lowest value in the column
-        self.weight = 1 #weight of the column
+        self.weight = 1 #weight of the column TODO isn't this covered in spec?
 
     # Add a new value to the column, and update column stats
     def update(self, newVal):
@@ -104,6 +141,16 @@ class Num:
             n1 = self.norm(n1)
             n2 = self.norm(n2)
         return abs(n1-n2)**2
+
+    def summarize(self):
+        print()
+        print("------- NUM -------")
+        print("Name: " + str(self.txt))
+        print("Count: " + str(self.n))
+        print("SD: " + str(self.sd))
+        print("High: " + str(self.high))
+        print("Low: " + str(self.low))
+
 
 
 class Sym:
@@ -160,6 +207,9 @@ class Sym:
 
     # Prints the stats for the row, for testing
     def summarize(self):
+        print()
+        print("------- SYM -------")
+        print("Name: " + str(self.txt))
         print("Count: " + str(self.n))
         print("Distinct count: " + str(self.nk))
         print("Same counts: ")
