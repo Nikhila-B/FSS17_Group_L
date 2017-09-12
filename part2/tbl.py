@@ -72,9 +72,22 @@ class Tbl:
         dom_dict = {}
         for i,row in self.rows.items():
             if row.rid not in dom_dict:
-                dom_dict[row.rid] = row.dominate(self)
-        print(dom_dict)
-        
+                wins = row.dominate(self)
+                dom_dict[row.rid] = wins
+        sorted_keys = sorted(dom_dict, key=lambda i: int(dom_dict[i]))
+        show_num = 3
+        top = sorted_keys[:show_num]
+        bottom = sorted_keys[-show_num:]
+
+        print()
+        print("DOMINATION RESULTS")
+        print("Header" + str(self.spec))
+        print("----- TOP -----")
+        for k in top:
+            print(self.rows[k].cells)
+        print("----- BOTTOM -----")
+        for k in bottom:
+            print(self.rows[k].cells)
 
 
         
@@ -94,6 +107,7 @@ class Row:
 
     # Update the table headers
     def update(self, cells, table):
+        self.cells = cells
         for i,header in table.cols["all"].items():
             header.update(cells[header.pos])            
 
@@ -113,7 +127,6 @@ class Row:
         sum1, sum2 = 0,0
         for k, col in t.goals.items():
             w = col.weight
-            print(col)
             x = col.norm(self.cells[col.pos])
             y = col.norm(other_row.cells[col.pos])
             sum1 = sum1 - math.e**(w * (x-y)/n)
