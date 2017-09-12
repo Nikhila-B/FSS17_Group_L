@@ -17,8 +17,11 @@ class Tbl:
     # Read in CSV file, call update on every row
     # Make sure handles multiple lines
     def fromCsv(self, fileName):
-        self.update({0:"$temp",1:"value"})
-        self.update({0:86, 1:"Hello!"})
+        self.update({0:">strength",1:"type",2:"<weight", 3:"<drag"})
+        self.update({0:800, 1:"fullscale", 2: 600, 3: 0.6})
+        self.update({0:45, 1:"rc_gas", 2: 16, 3: 0.3})
+        self.update({0:850, 1:"rc_gas", 2: 12, 3: 0.8})
+        self.update({0:0.2, 1:"foamy", 2: 0.01, 3: 0.9})
 
     # Update the table with a row
     # Calls header for first row, data for rest
@@ -65,34 +68,68 @@ class Tbl:
         row.update(cells, self)
         self.rows[len(self.rows)] = row
 
+    def dom(self):
+        dom_dict = {}
+        for i,row in self.rows.items():
+            if row.rid not in dom_dict:
+                dom_dict[row.rid] = row.dominate(self)
+        print(dom_dict)
+        
+
 
         
 class Row:
+
+    curID = 0
+
+    @staticmethod
+    def getID():
+        newID = Row.curID
+        Row.curID += 1
+        return newID
     
     def __init__(self):
-        cells = {}
+        self.rid = Row.getID()
+        self.cells = {}
 
     # Update the table headers
     def update(self, cells, table):
         for i,header in table.cols["all"].items():
-            header.update(cells[header.pos])
-            # Probably needs work...
-            
+            header.update(cells[header.pos])            
 
     # Get domination score for row, by comparing all pairs of rows
-    def dominate(self):
-        pass
+    def dominate(self, t):
+        wins = 0
+        for i,row in t.rows.items():
+            if self.rid != row.rid:
+                if self.dominationCompare(row, t):
+                    wins += 1
+        return wins
 
     # i.e. dominate1
     # subrouting of dominate that determines if this row dominates otherRow
-    @staticmethod
-    def dominationCompare(r1, r2):
-        pass
+    def dominationCompare(self, other_row, t):
+        n = len(t.goals)
+        sum1, sum2 = 0,0
+        for k, col in t.goals.items():
+            w = col.weight
+            print(col)
+            x = col.norm(self.cells[col.pos])
+            y = col.norm(other_row.cells[col.pos])
+            sum1 = sum1 - math.e**(w * (x-y)/n)
+            sum2 = sum2 - math.e**(w * (y-x)/n)
+        return sum1/n < sum2/n
+        
 
     # Calculate distance between two rows
     @staticmethod
-    def distance(r1, r2):
-        d,n,p=0,10^-64,0.5
+    def distance(r1, r2, t):
+        d,n,p = 0,10^-64,0.5
+        for i,col in t.x_cols["all"].items():
+            d1, n1 = col.distance(r1.cells[col.pos], r2.cells[col.pos])
+            d = d + d1
+            n = n + n1
+        return d**p / n**p
 
         
 class Num:
@@ -127,7 +164,6 @@ class Num:
 
     # Return the distance between two nums
     # Lua - something about watcher?
-    #@staticmethod
     def distance(self, n1, n2):
         if n1 is None and n2 is None:
             return 0
@@ -140,7 +176,7 @@ class Num:
         else:
             n1 = self.norm(n1)
             n2 = self.norm(n2)
-        return abs(n1-n2)**2
+        return abs(n1-n2)**2,1
 
     def summarize(self):
         print()
@@ -185,8 +221,7 @@ class Sym:
     #    depending on whether or not we are returning nothing.
     # If either is unknown, the return the max possible distance.
     # If both are unknown, just return nothing.
-    @staticmethod
-    def distance(s1, s2):
+    def distance(self, s1, s2):
         if s1 is None and s2 is None:
             return (0, 0) # Return nothing
         if s1 == s2:
