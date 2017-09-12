@@ -1,4 +1,5 @@
 import math
+import csv_reader
 
 class Tbl:
 
@@ -17,11 +18,8 @@ class Tbl:
     # Read in CSV file, call update on every row
     # Make sure handles multiple lines
     def fromCsv(self, fileName):
-        self.update({0:">strength",1:"type",2:"<weight", 3:"<drag"})
-        self.update({0:800, 1:"fullscale", 2: 600, 3: 0.6})
-        self.update({0:45, 1:"rc_gas", 2: 16, 3: 0.3})
-        self.update({0:850, 1:"rc_gas", 2: 12, 3: 0.8})
-        self.update({0:0.2, 1:"foamy", 2: 0.01, 3: 0.9})
+        csv_callback = lambda cells: self.update(cells)
+        csv_reader.withEachLine(fileName,csv_callback)
 
     # Update the table with a row
     # Calls header for first row, data for rest
@@ -74,8 +72,8 @@ class Tbl:
             if row.rid not in dom_dict:
                 wins = row.dominate(self)
                 dom_dict[row.rid] = wins
-        sorted_keys = sorted(dom_dict, key=lambda i: int(dom_dict[i]))
-        show_num = 3
+        sorted_keys = sorted(dom_dict, key=lambda i: int(dom_dict[i]), reverse=True)
+        show_num = 5
         top = sorted_keys[:show_num]
         bottom = sorted_keys[-show_num:]
 
@@ -107,9 +105,10 @@ class Row:
 
     # Update the table headers
     def update(self, cells, table):
-        self.cells = cells
         for i,header in table.cols["all"].items():
-            header.update(cells[header.pos])            
+            cells[header.pos] = header.fromString(cells[header.pos])
+            header.update(cells[header.pos])
+        self.cells = cells
 
     # Get domination score for row, by comparing all pairs of rows
     def dominate(self, t):
@@ -158,6 +157,8 @@ class Num:
 
     # Add a new value to the column, and update column stats
     def update(self, newVal):
+        if newVal is None:
+            return    
         # update count, lo, hi, sd
         self.n += 1 #increasing the counter for each new value
         if newVal < self.low:
@@ -190,6 +191,10 @@ class Num:
             n1 = self.norm(n1)
             n2 = self.norm(n2)
         return abs(n1-n2)**2,1
+
+    def fromString(self, value):
+        if value is not None:
+            return float(value)
 
     def summarize(self):
         print()
@@ -252,6 +257,9 @@ class Sym:
                 e = e - (p * math.log(p, 2))
             self._ent = e
         return self._ent
+
+    def fromString(self, value):
+        return value
 
     # Prints the stats for the row, for testing
     def summarize(self):
