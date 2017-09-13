@@ -5,7 +5,7 @@
 
 * Explore different kernels of Support Vector Machine.
 
-![Knn_kernels](https://github.com/Nikhila-B/FSS17_Group_L/blob/master/workshop/nbalaji_image.png)
+![Knn_kernels](https://github.com/Nikhila-B/FSS17_Group_L/blob/master/workshop/nbalaji_image.PNG)
 
 
 * Explain how we should choose K.
