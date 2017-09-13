@@ -1,3 +1,5 @@
+import sys
+
 from datetime import datetime
 
 start_time = datetime.now()
@@ -28,7 +30,7 @@ def parseRow(line, row_index):
     row_list.append(row)
 
 # Process file
-with open("POM3A.csv", 'r') as f:
+with open(sys.argv[1], 'r') as f:
     results = []
     for line in f:
         words = line.split(',')
