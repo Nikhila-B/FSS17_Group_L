@@ -15,13 +15,13 @@ I think of the political map example we looked at in class last week. There coul
 Predicted: [1 2 1 0 0 0 2 1 2 0]  
 Actual:    [1 1 1 0 0 0 2 1 2 0]  
 
-#### rbf
-Predicted: [1 2 1 0 0 0 2 1 2 0]
-Actual:    [1 1 1 0 0 0 2 1 2 0]
+#### rbf  
+Predicted: [1 2 1 0 0 0 2 1 2 0]  
+Actual:    [1 1 1 0 0 0 2 1 2 0]  
 
-#### sigmoid
-Predicted: [2 2 2 2 2 2 2 2 2 2]
-Actual:    [1 1 1 0 0 0 2 1 2 0]
+#### sigmoid  
+Predicted: [2 2 2 2 2 2 2 2 2 2]  
+Actual:    [1 1 1 0 0 0 2 1 2 0]  
 
 The different kernels gave very different performance. The sigmoid kernel resulted in terrible predictions.
 
