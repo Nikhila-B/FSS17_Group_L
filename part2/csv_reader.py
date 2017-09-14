@@ -32,30 +32,33 @@ def cleanRow(txt):
 def withEachLine(fileName, fn):
     
     global header
-    last_line = []
+    last_cells = []
     if (fileName.strip()[-3:] in fext for s in fext):
        with open(fileName, 'r') as f:
 
             for line in f:
-                
+               
                 line = cleanRow(line) # remove comments and padding
                 if len(line) == 0:
                     continue
+
+                cells = line.split(",")
                 if incompleteLine(line): #incomplete line - multi line record
-                    last_line = last_line + line[:-1]
+                    last_cells = last_cells + cells[:-1]
                     continue
-                if len(last_line):
-                    line = last_line + line
-                    last_line = []
+                if len(last_cells):
+                    cells = last_cells + cells
+                    last_cells = []
 
                 # If header, set header length
                 cell_dict = {}
-                cells = line.split(",")
+                
                 if header:
                     header_length = len(cells)
                 else:
                     if len(cells) != header_length:
                         print("Error: incorrect number of cells. Line: " + str(line))
+                        continue
 
                 # Now we have a full data line
                 

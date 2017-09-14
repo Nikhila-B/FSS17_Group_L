@@ -63,8 +63,11 @@ class Tbl:
     # In lua, something called old for (I think) updating rows. Don't worry about it for now.
     def data(self, cells):
         row = Row()
-        row.update(cells, self)
-        self.rows[len(self.rows)] = row
+        try:
+            row.update(cells, self)
+            self.rows[len(self.rows)] = row
+        except:
+            print("Error: Invalid float value")
 
     def dom(self):
         dom_dict = {}
@@ -106,9 +109,13 @@ class Row:
     # Update the table headers
     def update(self, cells, table):
         for i,header in table.cols["all"].items():
-            cells[header.pos] = header.fromString(cells[header.pos])
-            header.update(cells[header.pos])
-        self.cells = cells
+            try:
+                cells[header.pos] = header.fromString(cells[header.pos])
+                header.update(cells[header.pos])
+                self.cells = cells
+            except:
+                raise
+        
 
     # Get domination score for row, by comparing all pairs of rows
     def dominate(self, t):
@@ -193,8 +200,11 @@ class Num:
         return abs(n1-n2)**2,1
 
     def fromString(self, value):
-        if value is not None:
-            return float(value)
+        try:
+            if value is not None:
+                return float(value)
+        except:
+            raise
 
     def summarize(self):
         print()
