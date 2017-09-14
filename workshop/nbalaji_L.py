@@ -1,4 +1,10 @@
 
+# coding: utf-8
+
+# In[5]:
+
+
+
 """ Part 1 """
 # Load data
 import numpy as np
@@ -59,18 +65,20 @@ iris_y_test  = iris_y[indices[-10:]]
 # Create and fit a nearest-neighbor classifier
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier()
-knn.fit(iris_X_train, iris_y_train)
+knn.fit(iris_X_train, iris_y_train) 
 
 # Do prediction on the test data
 knn.predict(iris_X_test)
 print iris_y_test
 
-# k value is being checked for 1,5,15,25,40,100
-for k in [1,5,15,25,40,100]:
-    # KNN Visualization.
-    n_neighbors = k
-    h = .02  # step size in the mesh
 
+
+# KNN Visualization.
+n_array = [1, 5, 10, 20]
+n_neighbors = 15
+h = .02  # step size in the mesh
+
+for i in n_array:
     # Create color maps
     from matplotlib.colors import ListedColormap
     cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
@@ -78,7 +86,7 @@ for k in [1,5,15,25,40,100]:
 
     for weights in ['uniform', 'distance']:
         # we create an instance of Neighbours Classifier and fit the data.
-        knn = KNeighborsClassifier(n_neighbors, weights=weights)
+        knn = KNeighborsClassifier(i, weights=weights)
         knn.fit(X, y)
 
         # Plot the decision boundary. For that, we will assign a color to each
@@ -98,9 +106,26 @@ for k in [1,5,15,25,40,100]:
         plt.xlim(xx.min(), xx.max())
         plt.ylim(yy.min(), yy.max())
         plt.title("3-Class classification (k = %i, weights = '%s')"
-                  % (n_neighbors, weights))
+                  % (i, weights))
 
     plt.show()
+
+
+### TODO: explore the effects for different Ks.
+
+
+
+
+
+""" Part 3 """
+from sklearn import svm
+#svc = svm.SVC(kernel='linear')
+#svc.fit(iris_X_train, iris_y_train)  
+#svc.predict(iris_X_test)
+#print iris_y_test
+
+
+### TODO: get the SVC visualization for different kernels.
 
 for kernel in ['poly', 'linear', 'rbf']:
     svc = svm.SVC(kernel = kernel, gamma = 2)
@@ -126,3 +151,13 @@ for kernel in ['poly', 'linear', 'rbf']:
               % (kernel))
 
     plt.show()
+
+
+
+
+
+# In[ ]:
+
+
+
+
