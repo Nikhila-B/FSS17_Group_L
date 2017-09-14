@@ -110,7 +110,7 @@ for kernel in ['poly', 'linear', 'rbf']:
     # point in the mesh [x_min, x_max]x[y_min, y_max].
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
                          np.arange(y_min, y_max, h))
-    Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = svc.predict(np.c_[xx.ravel(), yy.ravel()])
 
     # Put the result into a color plot
     Z = Z.reshape(xx.shape)
