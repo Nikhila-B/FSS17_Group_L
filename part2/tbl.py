@@ -67,7 +67,8 @@ class Tbl:
             row.update(cells, self)
             self.rows[len(self.rows)] = row
         except:
-            print("Error: Invalid float value")
+            print("Skipping row: " + str(cells))
+            pass
 
     def dom(self):
         dom_dict = {}
@@ -108,13 +109,17 @@ class Row:
 
     # Update the table headers
     def update(self, cells, table):
-        for i,header in table.cols["all"].items():
+        colsIter = table.cols["all"].items()
+        # Convert cells from string, if applicable. If it fails, skip the row
+        for i,header in colsIter:
             try:
                 cells[header.pos] = header.fromString(cells[header.pos])
-                header.update(cells[header.pos])
-                self.cells = cells
             except:
                 raise
+        # Update the headers
+        for i,header in colsIter:
+            header.update(cells[header.pos])
+            self.cells = cells
         
 
     # Get domination score for row, by comparing all pairs of rows
@@ -204,6 +209,7 @@ class Num:
             if value is not None:
                 return float(value)
         except:
+            print("Error: Invalid float value: " + value)
             raise
 
     def summarize(self):
