@@ -1,8 +1,9 @@
 ### How to run
-On a terminal, navigate to the `FSS17_Group_L\part1` directory and type:
+On a terminal, navigate to the `FSS17_Group_L\part1` directory
+Have a csv file in the same directory
 ````
-python fileReader.py
+python fileReader.py [csvfilename]
 ````
-Output is displayed on the console.
+* **csvfilename** is the data file - we provide `small.csv` and `POM3.csv` in this part to test 
+* Output is redirect to a `output.txt` file in the same path
 
-Current test file is called `small.csv` and can be changed in the fileReader.py class. 
