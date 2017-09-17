@@ -1,7 +1,6 @@
-import sys
-
 from datetime import datetime
-
+import sys
+import os
 start_time = datetime.now()
 
 row_list = []
@@ -12,7 +11,7 @@ skipped_rows = []
 
 # Parses a data row (may be multiple lines) and adds the row to the row_list.
 # TODO: I'd prefer not to pass the index, but it seems necessary to report the row in the error.
-def parseRow(line, row_index):
+def parseRow(line):
     row = []
     for c in approved_columns:
         cell = line[c]
@@ -23,8 +22,8 @@ def parseRow(line, row_index):
             try:
                 cell = float(cell)
             except ValueError:
-                print("ERROR: Row " + str(row_index) + " has an invalid numeric cell " + str(c))
-                skipped_rows.append(row_index)
+                skipped_rows.append('ERROR: Row has an invalid numeric cell\t ' + ''.join(line) )
+                
                 return
         row.append(cell)
     row_list.append(row)
@@ -63,20 +62,30 @@ with open(sys.argv[1], 'r') as f:
                 continue
             if line[len(line)-1].strip() == "": # Row ends in comma
                 last_line = last_line + line[:-1]
-                continue
+                continue  
             if len(last_line):
                 line = last_line + line
                 last_line = [];
          
             # Skip rows where there's an incorrect number of cells
             if headerlen != len(line):
-                skipped_rows.append(i)
-                print("ERROR: Row " + str(i) + " has the wrong number of cells.")
+                
+                skipped_rows.append('ERROR: Row has wrong number of cells:\t' + ''.join(line))
                 continue
 
-            parseRow(line, i )
-    
-print("Number of rows/records read: " + str(len(row_list)))
-print("Skipped rows: " + str(skipped_rows))
+            parseRow(line )
+
+try:
+  os.remove('output.txt')
+except:
+    pass
+
+f = open('output.txt','a')
+f.write("Total number of rows/records read: " + str(len(row_list)))
 end_time = datetime.now() # Calculating run time
-print('Duration: {}'.format(end_time - start_time))  
+f.write('\nDuration: {}\n'.format(end_time - start_time))  
+for row in row_list:
+    f.write("\n" + str(row))
+f.write("\n\n\nBad rows:\n")
+f.write(''.join(skipped_rows))
+f.close()
