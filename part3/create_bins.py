@@ -62,7 +62,7 @@ def make_bins(numList, sd):
         #(3) span of range > epsilon
         #(4) low is greater than hi of prev range
         
-    printDictionary(ranges_dic)
+    #printDictionary(ranges_dic)
     
     #At this point MET (1) >=minBinsize 
     last_key = numInitBins
@@ -79,7 +79,14 @@ def make_bins(numList, sd):
     #condition (2) MET
     printDictionary(test_dict)
 
-    #TODO (3) and (4) 
+    #(3) and (4)
+    for k in  list(test_dict):
+        if(test_dict[k]!= None and test_dict[k+1] != None):
+           # span of bins is small - condition (3)
+            if(k!= last_key and test_dict[k+1]['low'] - test_dict[k]['high']  <= 0):
+                mergeBins(test_dict, k, k+1)
+    
+    printDictionary(test_dict)
         
     return test_dict
 
