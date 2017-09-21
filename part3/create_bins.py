@@ -17,13 +17,12 @@ def ranges(table, colIndex):
 # May be in our case we can create column data list
 def make_bins(numList, sd):
     numList.sort()
-    print("\n " + str(numList))
     n = len(numList)
     minBinSize = round(math.sqrt(n))
     espilon = 0.2*statistics.stdev(numList)
     numInitBins = math.floor(n/minBinSize) #total number of initial bins
    
-    print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  " Min bin size\n")
+    #print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  " Min bin size\n")
 
     # Had issues trying to initialize a dictionary key value dynamically.
     # for now, calculated the number of keys before
@@ -77,17 +76,17 @@ def make_bins(numList, sd):
             elif(test_dict[k]['span']< espilon):
                 mergeBins(test_dict, k, k+1)
     #condition (2) MET
-    printDictionary(test_dict)
+    #printDictionary(test_dict)
 
     #(3) and (4)
     for k in  list(test_dict):
-        if(test_dict[k]!= None and test_dict[k+1] != None):
+        if(k!= last_key and test_dict[k]!= None and test_dict[k+1] != None):
            # span of bins is small - condition (3)
-            if(k!= last_key and test_dict[k+1]['low'] - test_dict[k]['high']  <= 0):
+            if(test_dict[k+1]['low'] - test_dict[k]['high']  <= 0):
                 mergeBins(test_dict, k, k+1)
     
-    printDictionary(test_dict)
-        
+    #printDictionary(test_dict)
+    test_dict = cleanDict(test_dict)
     return test_dict
 
 ################ Supervised Discretization #####################
@@ -134,7 +133,6 @@ def super_ranges(table, colIndex, depIndex):
             breaks.append(hi)
 
     combine(range_indeces[0], range_indeces[len(range_indeces)-1], values)
-    print("Break at the top of the following ranges: " + str(breaks))
     super_ranges = create_supers(unsup_ranges, breaks)
     printDictionary(super_ranges)
 
@@ -158,12 +156,19 @@ def mergeBins(dict, k1, k2):
     dict[k1]['n'] = dict[k1]['n'] + dict[k2]['n']
     dict[k2] = None # reset k2
     return dict
-
+# delete none value keys
+def cleanDict(dict):
+    clean_dict = {}
+    i = 1
+    for key, val in dict.items():
+        if(val is not None):
+            clean_dict[i] = val
+            i += 1
+    return clean_dict
 #print the dictionary
 def printDictionary(dict):
     for key,value in dict.items():
-        print(key)
-        print(value)
+        print(str(key) + ": " + str(value))
     return
 
 # return a list of random numbers 
@@ -188,23 +193,23 @@ def get_values(table, colIndex):
 # Create table
 table = tbl.Tbl();
 table.update({0:"$someNumeric"})
-randomValues = randomNumRange(50,1, 23)
+randomValues = randomNumRange(100,1, 23)
 for i, val in enumerate(randomValues):
     y = .2
-    if i > 5:
+    if i > 10:
         y = .6
     if i > 30:
         y = .9
     table.update({0:val,1:y})
 
 # Print table
-for i, col in table.cols["all"].items():
-    col.summarize()
+#for i, col in table.cols["all"].items():
+    #col.summarize()
 
 # Run dicretizers
-print("\n ================ UNSUPERVISED BINS ================")
+print("\n================ UNSUPERVISED BINS ================")
 ranges(table, 0)
-print("\n ================ SUPERVISED BINS ================")
+print("\n================ SUPERVISED BINS ==================")
 super_ranges(table, 0, 1)
 
 
