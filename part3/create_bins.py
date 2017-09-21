@@ -28,24 +28,62 @@ def ranges(table, colIndex):
 # May be in our case we can create column data list
 def make_bins(numList, sd):
     numList.sort()
+    print("\n " + str(numList))
     n = len(numList)
-    minBinSize = math.sqrt(n)
+    minBinSize = round(math.sqrt(n))
     espilon = 0.2*statistics.stdev(numList)
-  
-    #initialize the first bin
-    low = numList[0]
-    high = numList[minBinSize]
-    span = high - low
+    numInitBins = math.floor(n/minBinSize) #total number of initial bins
+   
+    print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  "min bin size\n")
+
+    # Had issues trying to initialize a dictionary key value dynamically.
+    # for now, calculated the number of keys before
+    prop = ['span', 'low', 'n', 'high']
+    ranges_dic = {}
+    for i in range(1, numInitBins+1):
+        ranges_dic[i] = {}
+    for i in range(1, numInitBins+1):
+        for p in prop:
+            ranges_dic[i][p] = '0'
     
-    #traverse from sqrt(n)th item onwards and see if it needs to be split
-    for item in range(minBinSize, n):
+    jump_size = 0
+    #initialize bins
+    for i in range(1, numInitBins+1):
+        try:
+            start = jump_size
+            end = jump_size + minBinSize -1
+            ranges_dic[i]['low'] = numList[start]
+            ranges_dic[i]['high'] = numList[end]
+            ranges_dic[i]['span'] = ranges_dic[i]['high'] - ranges_dic[i]['low']
+            ranges_dic[i]['n'] = minBinSize
+            # in case there are fewer elements than minBinsSize at the end
+            # add it to the last bin
+            if(i == numInitBins and end < n -1):
+                ranges_dic[i]['high'] = numList[n-1]
+                ranges_dic[i]['span'] = ranges_dic[i]['high'] - ranges_dic[i]['low']
+                ranges_dic[i]['n'] = minBinSize + ((n-1)-end)
+            jump_size = jump_size + minBinSize
+        except:
+            print("something is going wrong")
+
+    printDictionary(ranges_dic)
+        
+    #At this point - (1) is met, need to check 
         #(1) >=minBinsize
         #(2) ranges differ by epsilon
         #(3) span of range > epsilon
         #(4) low is greater than hi of prev range
-        #while(e)
-        pass
+        
+    pass
 
+#print the dictionary
+def printDictionary(dictt):
+    for keys,values in dictt.items():
+        print(keys)
+        print(values)
+    return
+    
+    
 def super_ranges(table, colIndex):
     pass
 
