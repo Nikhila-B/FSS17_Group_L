@@ -34,7 +34,7 @@ def make_bins(numList, sd):
     espilon = 0.2*statistics.stdev(numList)
     numInitBins = math.floor(n/minBinSize) #total number of initial bins
    
-    print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  "min bin size\n")
+    print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  " Min bin size\n")
 
     # Had issues trying to initialize a dictionary key value dynamically.
     # for now, calculated the number of keys before
@@ -46,27 +46,28 @@ def make_bins(numList, sd):
         for p in prop:
             ranges_dic[i][p] = '0'
     
-    jump_size = 0
+    cur_pos = 0
     #initialize bins
     for i in range(1, numInitBins+1):
         try:
-            start = jump_size
-            end = jump_size + minBinSize -1
+            start = cur_pos
+            end = cur_pos + minBinSize -1
             ranges_dic[i]['low'] = numList[start]
             ranges_dic[i]['high'] = numList[end]
             ranges_dic[i]['span'] = ranges_dic[i]['high'] - ranges_dic[i]['low']
             ranges_dic[i]['n'] = minBinSize
             # in case there are fewer elements than minBinsSize at the end
             # add it to the last bin
-            if(i == numInitBins and end < n -1):
+            if(i == numInitBins and end < n-1):
                 ranges_dic[i]['high'] = numList[n-1]
                 ranges_dic[i]['span'] = ranges_dic[i]['high'] - ranges_dic[i]['low']
                 ranges_dic[i]['n'] = minBinSize + ((n-1)-end)
-            jump_size = jump_size + minBinSize
+            cur_pos = cur_pos + minBinSize
         except:
             print("something is going wrong")
 
     printDictionary(ranges_dic)
+    return ranges_dic
         
     #At this point - (1) is met, need to check 
         #(1) >=minBinsize
@@ -89,13 +90,13 @@ def super_ranges(table, colIndex):
 
 table = tbl.Tbl();
 table.update({0:"$someNumeric"})
-randomValues = randomNumRange(10,1, 23)
+randomValues = randomNumRange(100,1, 23)
 for val in randomValues:
     table.update({0:val})
-
+for i, col in table.cols["all"].items():
+    col.summarize()
 
 ranges(table, 0)
 
-for i, col in table.cols["all"].items():
-    col.summarize()
+
 
