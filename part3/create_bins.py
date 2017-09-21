@@ -5,25 +5,14 @@ import math
 import random
 import statistics
 
-# return a list of random numbers 
-# the size of the list = count, range for numbers = [min, max]
-random.seed(5)
-def randomNumRange(count, min, max):
-    numList = []
-    for x in range(0, count):
-        numList.append(random.uniform(min, max))
-    return numList
+################ Unsupervised Discretization #####################
 
 def ranges(table, colIndex):
-    values = []
-    for r in table.rows:
-        row = table.rows[r]
-        value = row.cells[colIndex]
-        if value is not None:
-            values.append(value)
-
+    values = get_values(table, colIndex)
     col = table.cols["all"][colIndex]
-    make_bins(values, col.sd)
+    sd = col.sd
+    bins = make_bins(values, sd)
+    printDictionary(bins)
 
 # May be in our case we can create column data list
 def make_bins(numList, sd):
@@ -66,7 +55,6 @@ def make_bins(numList, sd):
         except:
             print("something is going wrong")
 
-    printDictionary(ranges_dic)
     return ranges_dic
         
     #At this point - (1) is met, need to check 
@@ -77,26 +65,103 @@ def make_bins(numList, sd):
         
     pass
 
-#print the dictionary
-def printDictionary(dictt):
-    for keys,values in dictt.items():
-        print(keys)
-        print(values)
-    return
-    
-    
-def super_ranges(table, colIndex):
-    pass
+################ Supervised Discretization #####################
 
+def super_ranges(table, colIndex, depIndex):
+    values = get_values(table, colIndex)
+    col = table.cols["all"][colIndex]
+    sd = col.sd
+    ranges_dict = make_bins(values, sd)
+    
+    breaks = [] # Array of the splits to keep
+    range_indeces = list(ranges_dict.keys())
+    
+    def combine(lo, hi, values):
+
+        if lo == hi:
+            return
+
+        print("Looking from " + str(lo) + " to " + str(hi))
+        print("values: " + str(len(values)))
+        print()
+        best = statistics.stdev(values)
+        cut = None
+        cut_location = None
+        n = len(values)
+        
+        
+        # for each split:
+        # - Get values to the left and right of split
+        # - Calculate expected value of the split
+        # - If split is better so far, set best and cut
+        i = 0 
+        for j in range(lo, hi):
+            cur_bin_size = ranges_dict[j]["n"]
+            l = values[0:i+cur_bin_size]
+            r = values[i+cur_bin_size:]
+            i += cur_bin_size
+            exp_val = (len(l)/n)*statistics.stdev(l) + (len(r)/n)*statistics.stdev(r)
+            if exp_val < best:
+                cut = j
+                cut_location = i
+                best = exp_val
+
+        # Recurse!
+        if cut is not None:
+            combine(lo,cut,values[0:cut_location])
+            combine(cut,hi,values[cut_location:])
+        else:
+            breaks.append(cut)
+
+        print(cut)
+        print(best)
+
+    combine(range_indeces[0], range_indeces[len(range_indeces)-1], values)
+    print(breaks)
+
+
+################ Helpers #####################
+
+#print the dictionary
+def printDictionary(dict):
+    for key,value in dict.items():
+        print(key)
+        print(value)
+    return
+
+# return a list of random numbers 
+# the size of the list = count, range for numbers = [min, max]
+random.seed(5)
+def randomNumRange(count, min, max):
+    numList = []
+    for x in range(0, count):
+        numList.append(random.uniform(min, max))
+    return numList
+
+def get_values(table, colIndex):
+    values = []
+    for r in table.rows:
+        row = table.rows[r]
+        value = row.cells[colIndex]
+        if value is not None:
+            values.append(value)
+    return values
+
+################ Run #####################
+# Create table
 table = tbl.Tbl();
 table.update({0:"$someNumeric"})
-randomValues = randomNumRange(100,1, 23)
+randomValues = randomNumRange(50,1, 23)
 for val in randomValues:
     table.update({0:val})
+
+# Print table
 for i, col in table.cols["all"].items():
     col.summarize()
 
+# Run dicretizers
 ranges(table, 0)
+super_ranges(table, 0, 1)
 
 
 
