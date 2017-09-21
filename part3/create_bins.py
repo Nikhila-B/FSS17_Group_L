@@ -139,6 +139,14 @@ def super_ranges(table, colIndex, depIndex):
 
 
 ################ Helpers #####################
+# Merge two bins - update the nested key values
+# k1 is updated, k2 is set to None
+def mergeBins(dict, k1, k2, penUltimate):
+    dict[k1]['high'] = dict[k2]['high'] #merge update
+    dict[k1]['span'] = dict[k1]['high']-dict[k1]['low']
+    dict[k1]['n'] = dict[k1]['n'] + dict[k2]['n']
+    dict[k2] = None # reset k2
+    return dict
 
 #print the dictionary
 def printDictionary(dict):
