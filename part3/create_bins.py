@@ -55,15 +55,33 @@ def make_bins(numList, sd):
         except:
             print("something is going wrong")
 
-    return ranges_dic
-        
+          
     #At this point - (1) is met, need to check 
         #(1) >=minBinsize
         #(2) ranges differ by epsilon
         #(3) span of range > epsilon
         #(4) low is greater than hi of prev range
         
-    pass
+    printDictionary(ranges_dic)
+    
+    #At this point MET (1) >=minBinsize 
+    last_key = numInitBins
+    test_dict = ranges_dic.copy()
+    traverseKeys = list(test_dict)
+    for k in traverseKeys:
+        if(test_dict[k]!= None):
+            #last bins span is smaller - condition (3) edge case
+            if(k == last_key and test_dict[k]['span']< espilon):
+                mergeBins(test_dict, k-1, k)
+            # span of bins is small - condition (3)
+            elif(test_dict[k]['span']< espilon):
+                mergeBins(test_dict, k, k+1)
+    #condition (2) MET
+    printDictionary(test_dict)
+
+    #TODO (3) and (4) 
+        
+    return test_dict
 
 ################ Supervised Discretization #####################
 
