@@ -86,27 +86,20 @@ def make_bins(numList, sd):
 ################ Supervised Discretization #####################
 
 def super_ranges(table, colIndex, depIndex):
-    values = get_values(table, colIndex)
-    col = table.cols["all"][colIndex]
-    sd = col.sd
-    ranges_dict = make_bins(values, sd)
+    indep_values = get_values(table, colIndex)
+    sd = table.cols["all"][colIndex].sd
+    unsup_ranges = make_bins(indep_values, sd)
     
     breaks = [] # Array of the splits to keep
-    range_indeces = list(ranges_dict.keys())
+    range_indeces = list(unsup_ranges.keys())
+    values = get_values(table, depIndex)
     
     def combine(lo, hi, values):
-
-        if lo == hi:
-            return
-
-        print("Looking from " + str(lo) + " to " + str(hi))
-        print("values: " + str(len(values)))
-        print()
+        #print("Looking from " + str(lo) + " to " + str(hi))
         best = statistics.stdev(values)
         cut = None
         cut_location = None
         n = len(values)
-        
         
         # for each split:
         # - Get values to the left and right of split
@@ -114,7 +107,8 @@ def super_ranges(table, colIndex, depIndex):
         # - If split is better so far, set best and cut
         i = 0 
         for j in range(lo, hi):
-            cur_bin_size = ranges_dict[j]["n"]
+            #print("--- Looking at spliting after range " + str(j))
+            cur_bin_size = unsup_ranges[j]["n"]
             l = values[0:i+cur_bin_size]
             r = values[i+cur_bin_size:]
             i += cur_bin_size
@@ -123,25 +117,35 @@ def super_ranges(table, colIndex, depIndex):
                 cut = j
                 cut_location = i
                 best = exp_val
+        #print("Found best cut: " + str(cut) + "\n")
 
         # Recurse!
         if cut is not None:
             combine(lo,cut,values[0:cut_location])
-            combine(cut,hi,values[cut_location:])
+            combine(cut+1,hi,values[cut_location:])
         else:
-            breaks.append(cut)
-
-        print(cut)
-        print(best)
+            breaks.append(hi)
 
     combine(range_indeces[0], range_indeces[len(range_indeces)-1], values)
-    print(breaks)
+    print("Break at the top of the following ranges: " + str(breaks))
+    super_ranges = create_supers(unsup_ranges, breaks)
+    printDictionary(super_ranges)
 
-
+# Pass the ranges and indeces of ranges you want to break at the top of
+def create_supers(unsup_ranges, splits):
+    super_ranges = {}
+    i = 1
+    for key, u_range in unsup_ranges.items():
+        if key in splits:
+            super_ranges[i] = {"label":i, "most":u_range["high"]}
+            i += 1
+    return super_ranges
+        
+            
 ################ Helpers #####################
 # Merge two bins - update the nested key values
 # k1 is updated, k2 is set to None
-def mergeBins(dict, k1, k2, penUltimate):
+def mergeBins(dict, k1, k2):
     dict[k1]['high'] = dict[k2]['high'] #merge update
     dict[k1]['span'] = dict[k1]['high']-dict[k1]['low']
     dict[k1]['n'] = dict[k1]['n'] + dict[k2]['n']
@@ -178,15 +182,22 @@ def get_values(table, colIndex):
 table = tbl.Tbl();
 table.update({0:"$someNumeric"})
 randomValues = randomNumRange(50,1, 23)
-for val in randomValues:
-    table.update({0:val})
+for i, val in enumerate(randomValues):
+    y = .2
+    if i > 5:
+        y = .6
+    if i > 30:
+        y = .9
+    table.update({0:val,1:y})
 
 # Print table
 for i, col in table.cols["all"].items():
     col.summarize()
 
 # Run dicretizers
+print("\n ================ UNSUPERVISED BINS ================")
 ranges(table, 0)
+print("\n ================ SUPERVISED BINS ================")
 super_ranges(table, 0, 1)
 
 
