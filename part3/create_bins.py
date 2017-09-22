@@ -172,12 +172,12 @@ def printDictionary(dict):
     return
 
 # return a list of random numbers 
-# the size of the list = count, range for numbers = [min, max]
-random.seed(5)
-def randomNumRange(count, min, max):
+# the size of the list = count, range for numbers = [0,1]
+# Comment out seed: random.seed(5)
+def randomList(count):
     numList = []
     for x in range(0, count):
-        numList.append(random.uniform(min, max))
+        numList.append(random.random())
     return numList
 
 def get_values(table, colIndex):
@@ -193,14 +193,17 @@ def get_values(table, colIndex):
 # Create table
 table = tbl.Tbl();
 table.update({0:"$someNumeric"})
-randomValues = randomNumRange(100,1, 23)
-for i, val in enumerate(randomValues):
-    y = .2
-    if i > 10:
-        y = .6
-    if i > 30:
-        y = .9
-    table.update({0:val,1:y})
+randomValues = randomList(50)
+for val in randomValues:
+    r = 2*random.random()/100
+    if val < .2:
+        y = .2 + r
+    elif val < .6:
+        y = .6 + r
+    else:
+        y = .9 + r
+    row = {0:val,1:y}
+    table.update(row)
 
 # Print table
 #for i, col in table.cols["all"].items():
