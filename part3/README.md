@@ -1,7 +1,7 @@
 ### Output
 The `output.txt` file contains the output of one run of create_bins.py. All the bins are printed from unsupervised and supervised discretization.
 
-**Update:** `output_corrected.txt` is the output after correcting how the test data is generated. The dependent variable is now actually dependent on the independent variable, and matches the example test code. Test data is no longer uniform or seeded. 
+**Update:** `output.txt` is the output after correcting how the test data is generated. The dependent variable is now actually dependent on the independent variable, and matches the example test code. Test data is no longer uniform or seeded. 
 
 
 ### File
