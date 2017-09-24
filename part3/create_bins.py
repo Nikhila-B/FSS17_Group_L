@@ -1,4 +1,5 @@
 import sys
+sys.stdout = open('output.txt', 'w')
 sys.path.insert(0, '../part2')
 import tbl
 import math
@@ -66,7 +67,7 @@ def make_bins(numList, sd):
     #At this point MET (1) >=minBinsize 
     last_key = numInitBins
     test_dict = ranges_dic.copy()
-    traverseKeys = list(test_dict)
+    traverseKeys = list(test_dict )
     for k in traverseKeys:
         if(test_dict[k]!= None):
             #last bins span is smaller - condition (3) edge case
@@ -214,6 +215,3 @@ print("\n================ UNSUPERVISED BINS ================")
 ranges(table, 0)
 print("\n================ SUPERVISED BINS ==================")
 super_ranges(table, 0, 1)
-
-
-
