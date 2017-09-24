@@ -13,6 +13,9 @@ The `output.txt` file contains the output of one run of create_bins.py. All the 
   * Run 
     * Both unsupervised and supervised discretization are run on generated data. As in the test code example, there is an independent variable with 50 values zero to one, and an dependent variable that is related to that independent variable.
 
+### Install Dependency
+Please install the Statistics Dependency package - we use it to calculate the standard deviation
+`python -m pip install statistics`
 ### To Run 
 In order to run, navigate to the terminal where **create_bins.py** file is located and run `python create_bins.py`
 
