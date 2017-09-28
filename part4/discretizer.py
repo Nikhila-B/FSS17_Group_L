@@ -189,4 +189,45 @@ def get_values(table, colIndex):
             values.append(value)
     return values
 
+# change the numeric values for a given col to the binID
+# SuperRangeDict - is the dictionary of supervised binIDs
+def convert_values_binId(table, colIndex, superRangesDict):
+    for r in table.rows:
+        row = table.rows[r]
+        value = row.cells[colIndex]
+        for key, superRange in superRangesDict.items():
+            if(value <= superRange["most"]):
+                row.cells[colIndex] = superRange["label"] #replace the value with the id
+                break # move to next row
+    
+    # check if they changed
+    #print(get_values(table, colIndex))
+    return
 
+################ Run/ Test #####################
+# Create table
+''' table = tbl.Tbl();
+table.update({0:"$someNumeric"})
+randomValues = randomList(50)
+for val in randomValues:
+    r = 2*random.random()/100
+    if val < .2:
+        y = .2 + r
+    elif val < .6:
+        y = .6 + r
+    else:
+        y = .9 + r
+    row = {0:val,1:y}
+    table.update(row)
+
+# Print table
+#for i, col in table.cols["all"].items():
+    #col.summarize()
+
+# Run dicretizers
+print("\n================ UNSUPERVISED BINS ================")
+ranges(table, 0)
+print("\n================ SUPERVISED BINS ==================")
+superRanges = super_ranges(table, 0, 1)
+#print("\n================ Example - Values to BinID ==================")
+#convert_values_binId(table, 0, superRanges) '''
