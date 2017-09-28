@@ -10,58 +10,47 @@ import numpy
 ################ Unsupervised Discretization #####################
 
 def ranges(table, colIndex):
-    values = get_values(table, colIndex)
+    indep_values = get_values(table, colIndex)
     col = table.cols["all"][colIndex]
-    sd = col.sd
-    listzero = [0]*len(values)
-    comb_list = list(zip(values,listzero))
-    bins = make_bins(comb_list, sd)
-    printDictionary(bins)
+    sd = statistics.stdev(indep_values)
+    indep_values.sort()
+    unsup_bins = make_bins(indep_values, sd)
+    return unsup_bins
 
-# May be in our case we can create column data list
+# Expects already sorted list
 def make_bins(numList, sd):
-    numList.sort()
+
+    # Initalize bin variables
     n = len(numList)
+    epsilon = 0.2*statistics.stdev(numList)
+    print("Epsilon: " + str(epsilon))
     minBinSize = round(math.sqrt(n))
-    x =  numpy.array(numList)
-    #espilon = 0.2
-    espilon = 0.2*statistics.stdev(x[:,0])
     numInitBins = math.floor(n/minBinSize) #total number of initial bins
+    print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  " Min bin size\n")
 
-    #print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  " Min bin size\n")
-
-    # Had issues trying to initialize a dictionary key value dynamically.
-    # for now, calculated the number of keys before
-    prop = ['span', 'low', 'n', 'high']
-    ranges_dic = {}
-    for i in range(1, numInitBins+1):
-        ranges_dic[i] = {}
-    for i in range(1, numInitBins+1):
-        for p in prop:
-            ranges_dic[i][p] = '0'
-
+    bins = []
     cur_pos = 0
     #initialize bins
     for i in range(1, numInitBins+1):
         try:
             start = cur_pos
-            end = cur_pos + minBinSize -1
-            ranges_dic[i]['low'] = numList[start][0]
-            ranges_dic[i]['high'] = numList[end][0]
-            ranges_dic[i]['span'] = ranges_dic[i]['high'] - ranges_dic[i]['low']
-            ranges_dic[i]['n'] = minBinSize
+            end = cur_pos + minBinSize -1 #inclusive
+            bin_dict = {}
+            bin_dict['low'] = numList[start]
+            bin_dict['high'] = numList[end]
+            bin_dict['span'] = bin_dict['high'] - bin_dict['low']
+            bin_dict['n'] = minBinSize
             # in case there are fewer elements than minBinsSize at the end
             # add it to the last bin
             if(i == numInitBins and end < n-1):
-                ranges_dic[i]['high'] = numList[n-1][0]
-                ranges_dic[i]['span'] = ranges_dic[i]['high'] - ranges_dic[i]['low']
-                ranges_dic[i]['n'] = minBinSize + ((n-1)-end)
+                bin_dict['high'] = numList[n-1]
+                bin_dict['span'] = bin_dict['high'] - bin_dict['low']
+                bin_dict['n'] = minBinSize + ((n-1)-end)
+            bins.append(bin_dict)
             cur_pos = cur_pos + minBinSize
         except:
             print("something is going wrong")
 
-
-            #At this point - (1) is met, need to check
             #(1) >=minBinsize
             #(2) ranges differ by epsilon
             #(3) span of range > epsilon
@@ -70,17 +59,14 @@ def make_bins(numList, sd):
     #printDictionary(ranges_dic)
 
     #At this point MET (1) >=minBinsize
-    last_key = numInitBins
-    test_dict = ranges_dic.copy()
-    traverseKeys = list(test_dict )
-    for k in traverseKeys:
-        if(test_dict[k]!= None):
-            #last bins span is smaller - condition (3) edge case
-            if(k == last_key and test_dict[k]['span']< espilon):
-                mergeBins(test_dict, k-1, k)
-            # span of bins is small - condition (3)
-            elif(test_dict[k]['span']< espilon):
-                mergeBins(test_dict, k, k+1)
+    last_bin = numInitBins
+    for i, bin_dict in enumerate(bins):
+        #last bins span is smaller - condition (3) edge case
+        if(i == last_bin and bin_dict['span'] < epsilon):
+            mergeBins(bins, i-1, i)
+        # span of bins is small - condition (3)
+        elif(bin_dict['span'] < epsilon):
+            mergeBins(bins, i, i+1)
     #condition (2) MET
     #printDictionary(test_dict)
 
