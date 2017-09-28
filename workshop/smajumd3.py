@@ -63,7 +63,7 @@ knn.fit(iris_X_train, iris_y_train)
 
 # Do prediction on the test data
 knn.predict(iris_X_test)
-print iris_y_test
+print(iris_y_test)
 
 # k value is being checked for 1,5,15,25,40,100
 for k in [1,5,15,25,40,100]:
