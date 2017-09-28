@@ -41,7 +41,7 @@ class Tbl:
             header_instance.weight = info["weight"]
             self.name[header_instance.txt] = header_instance
             for col_dict in info["included_in"]:
-                col_dict[len(col_dict)] = header_instance
+                col_dict[header_instance.pos] = header_instance
             
 
     # Looks for special characters in the header text and returns spec for the special character
@@ -65,7 +65,7 @@ class Tbl:
         row = Row()
         try:
             row.update(cells, self)
-            self.rows[len(self.rows)] = row
+            self.rows[row.rid] = row
         except:
             print("Skipping row: " + str(cells))
             pass
@@ -80,6 +80,13 @@ class Tbl:
         show_num = 5
         top = sorted_keys[:show_num]
         bottom = sorted_keys[-show_num:]
+        for i, r in self.rows.items():
+            print(i)
+        for i, r in self.rows.items():
+            print(r.rid)
+            
+        print(top)
+        print(bottom)
 
         print()
         print("DOMINATION RESULTS")
@@ -90,9 +97,10 @@ class Tbl:
         print("----- BOTTOM -----")
         for k in bottom:
             print(self.rows[k].cells)
+        self.doms = dom_dict
+        return dom_dict
 
-
-        
+      
 class Row:
 
     curID = 0
@@ -206,8 +214,7 @@ class Num:
 
     def fromString(self, value):
         try:
-            if value is not None:
-                return float(value)
+            return float(value)
         except:
             print("Error: Invalid float value: " + value)
             raise

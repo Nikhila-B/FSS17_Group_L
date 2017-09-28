@@ -134,7 +134,8 @@ def super_ranges(table, colIndex, depIndex):
 
     combine(range_indeces[0], range_indeces[len(range_indeces)-1], values)
     super_ranges = create_supers(unsup_ranges, breaks)
-    printDictionary(super_ranges)
+    #printDictionary(super_ranges)
+    return super_ranges
 
 # Pass the ranges and indeces of ranges you want to break at the top of
 def create_supers(unsup_ranges, splits):
@@ -191,7 +192,7 @@ def get_values(table, colIndex):
 
 # change the numeric values for a given col to the binID
 # SuperRangeDict - is the dictionary of supervised binIDs
-def convert_values_binId(table, colIndex, superRangesDict):
+def discretize_column(table, colIndex, superRangesDict):
     for r in table.rows:
         row = table.rows[r]
         value = row.cells[colIndex]
