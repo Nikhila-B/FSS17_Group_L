@@ -16,4 +16,5 @@ Command line args
 3.  maxDepth - stop spliiting if the tree gets any deeper than this
 
 ### Output
-The output.txt file contains the output of one run - TODO
+The output.txt file contains the output of one sample run 
+
