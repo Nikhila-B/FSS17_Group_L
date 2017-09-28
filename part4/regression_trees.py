@@ -39,29 +39,33 @@ maxDepth = int(sys.argv[3])
 #print("\n================ SUPERVISED BINS ==================")
 #discretizer.super_ranges(table, 2, 7)
 
+# This works well for now
+tooFew   = 1
+maxDepth = 3
+
 # Create fake table for now
 table = tbl.Tbl()
-table.update({0: "$indep1", 1: "$indep2"})
-rows = [{0: "1", 1: "2", 3: "1"},
-        {0: "1", 1: "3", 3: "2"},
-        {0: "2", 1: "2", 3: "1"},
-        {0: "2", 1: "3", 3: "2"},
-        {0: "2", 1: "4", 3: "1"}]
-dom = {0:1,1:2,2:1,3:2,4:1}
+table.update({0: "$indep1", 1: "$indep2"})#, 2:"$indep3"})
+rows = [{0: "1", 1: "2", 3: ""},
+        {0: "1", 1: "6", 3: ""},
+        {0: "2", 1: "6", 3: ""},
+        {0: "2", 1: "6", 3: ""},
+        {0: "4", 1: "7", 3: ""}]
+dom = {0:1, 1:2, 2:3, 3:3, 4:3}
 for row in rows:
     table.update(row)
 
 for i, col in table.cols["all"].items():
     col.summarize()
 
-colList = list(table.cols["all"].keys()) # only independent
+colList = list(table.cols["all"].keys())
 rowList = list(table.rows.keys())
 
 class Node():
-    def __init__(self, values):
+    def __init__(self, rows):
         self.v = None
         self.depth = 0
-        self.values = values
+        self.rows = rows
         self.splitOn = None # Column id that node was split on
         self.children = {} # Dictionary (by bin id) of chlid nodes
 
@@ -87,12 +91,12 @@ def split(node):
         if col == node.splitOn:
             return
         rowsByVal = {} # Dictonary to find rows for each different column value
-        for row in node.values:
+        for row in node.rows:
             cell = str(int(table.rows[row].cells[col]))
             if cell not in rowsByVal: # Create key if hasn't been created yet
                 rowsByVal[cell] = []
             rowsByVal[cell].append(row)
-        expVal = expValue(rowsByVal, len(node.values))
+        expVal = expValue(rowsByVal, len(node.rows))
         if (bestSplitCol is None) or (expVal < bestSplitVal):
             bestSplitCol = col
             bestSplitVal = expVal
@@ -100,12 +104,16 @@ def split(node):
 
     # Split on the column who reduces variability of dom
     # Stop when: Spliting does not improve variability
-    nodeVariability = statistics.stdev(getDomsFromRows(node.values))
-    node.v = nodeVariability
+    nodeVariability = statistics.stdev(getDomsFromRows(node.rows))
+    print("... So should get " + str(nodeVariability))
     if bestSplitVal < nodeVariability: 
         node.splitOn = table.cols["all"][bestSplitCol].txt
         for key, rowArr in bestSplitRows.items():
             child = Node(rowArr)
+            if len(rowArr) == 1:
+                child.v = 0
+            if len(rowArr) > 1:
+                child.v = statistics.stdev(getDomsFromRows(rowArr))
             child.depth = node.depth + 1
             node.children[key] = child
 
@@ -114,13 +122,14 @@ def split(node):
             #   - There are tooFew examples
             #   - Depth is too much
             if (len(rowArr) > tooFew) and (node.depth < maxDepth):
+                print("Splitting...")
                 split(child)
+                
 
 def getDomsFromRows(rowsList):
     domVals = []
     for row in rowsList:
         domVals.append(dom[row])
-    print(domVals)
     return domVals
     
 
@@ -129,12 +138,9 @@ def printTree(node):
         for i in range(1, child.depth):
             sys.stdout.write('| ')
         sys.stdout.write(str(node.splitOn) + " = " + str(key) + "        ")
-        sys.stdout.write('n = ')
-        sys.stdout.write(str(len(child.values)))
-        sys.stdout.write(', mu = ')
-        sys.stdout.write(str(statistics.mean(child.values)))
-        sys.stdout.write(', sd = ')
-        sys.stdout.write(str(child.v))
+        sys.stdout.write('n = ' + str(len(child.rows)))
+        sys.stdout.write(', mu = ' + str(statistics.mean(getDomsFromRows(child.rows))))
+        sys.stdout.write(', sd = ' + str(child.v))
         sys.stdout.write('\n')
         printTree(child)
 
