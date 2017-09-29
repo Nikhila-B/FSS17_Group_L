@@ -28,11 +28,15 @@ def make_bins(numList, sd):
     numInitBins = math.floor(n/minBinSize) #total number of initial bins
     print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  " Min bin size\n")
 
+    #(1) >=minBinsize
+    #(2) ranges differ by epsilon
+    #(3) span of range > epsilon
+    #(4) low is greater than hi of prev range
+
+    # Create bins (1) that are >= minBinSize
     bins = []
     cur_pos = 0
-    #initialize bins
     for i in range(1, numInitBins+1):
-        try:
             start = cur_pos
             end = cur_pos + minBinSize -1 #inclusive
             bin_dict = {}
@@ -48,39 +52,48 @@ def make_bins(numList, sd):
                 bin_dict['n'] = minBinSize + ((n-1)-end)
             bins.append(bin_dict)
             cur_pos = cur_pos + minBinSize
-        except:
-            print("something is going wrong")
 
-            #(1) >=minBinsize
-            #(2) ranges differ by epsilon
-            #(3) span of range > epsilon
-            #(4) low is greater than hi of prev range
+    # Traverses bins and combines bins if they match conditionFunc
+    def combine_bins(conditionFunc):
+        i = 0
+        while i < len(bins):
+            if len(bins) <= 1:
+                break
+            if i == len(bins)-1:
+                while conditionFunc(bins[i-1], bins[i]):
+                    merge_bins(i-1, 1)
+                    i -= 1 # If you've deleted the last, now look at what you just merged into
+            else:
+                while conditionFunc(bins[i], bins[i+1]):
+                    merge_bins(i, i+1)
+            i += 1
 
-    #printDictionary(ranges_dic)
+    # Merge second bin into the first bin
+    def merge_bins(i1, i2):
+        bin1, bin2 = bins[i1], bins[i2]
+        bin1['high'] = bin2['high']
+        bin1['span'] = bin2['high'] - bin1['low']
+        bin1['n'] = bin1['n'] + bin2['n']
+        del bins[i2]
 
-    #At this point MET (1) >=minBinsize
-    last_bin = numInitBins
-    for i, bin_dict in enumerate(bins):
-        #last bins span is smaller - condition (3) edge case
-        if(i == last_bin and bin_dict['span'] < epsilon):
-            mergeBins(bins, i-1, i)
-        # span of bins is small - condition (3)
-        elif(bin_dict['span'] < epsilon):
-            mergeBins(bins, i, i+1)
-    #condition (2) MET
-    #printDictionary(test_dict)
+    # Print bins before checks
+    for bin_dict in bins:
+        print(bin_dict)
 
-    #(3) and (4)
-    for k in  list(test_dict):
-        if(k!= last_key and test_dict[k]!= None and test_dict[k+1] != None):
-            # span of bins is small - condition (3)
-            if(test_dict[k+1]['low'] - test_dict[k]['high']  <= 0):
-                mergeBins(test_dict, k, k+1)
+    #(2)?
+            
+    # (3) Combine bins if the span is less than some epsilon
+    combine_bins(lambda b, placeholder: b['span'] < epsilon )
 
-    #printDictionary(test_dict)
-    test_dict = cleanDict(test_dict)
-    return test_dict
+    # (4) Combine bins if the span is less than some epsilon
+    combine_bins(lambda b1, b2: b2['low'] < b1['high'] )
 
+    # Print bins after checks
+    print("\n--- After combining ---")
+    for bin_dict in bins:
+        print(bin_dict)
+
+        
 ################ Supervised Discretization #####################
 
 def super_ranges(table, colIndex, depIndex):
@@ -151,14 +164,6 @@ def create_supers(unsup_ranges, splits):
 
 
 ################ Helpers #####################
-# Merge two bins - update the nested key values
-# k1 is updated, k2 is set to None
-def mergeBins(dict, k1, k2):
-    dict[k1]['high'] = dict[k2]['high'] #merge update
-    dict[k1]['span'] = dict[k1]['high']-dict[k1]['low']
-    dict[k1]['n'] = dict[k1]['n'] + dict[k2]['n']
-    dict[k2] = None # reset k2
-    return dict
 # delete none value keys
 def cleanDict(dict):
     clean_dict = {}
@@ -219,5 +224,5 @@ for val in randomValues:
 # Run dicretizers
 print("\n================ UNSUPERVISED BINS ================")
 ranges(table, 0)
-print("\n================ SUPERVISED BINS ==================")
-super_ranges(table, 0, 1)
+#print("\n================ SUPERVISED BINS ==================")
+#super_ranges(table, 0, 1)
