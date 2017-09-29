@@ -26,7 +26,6 @@ def make_bins(numList, sd):
     print("Epsilon: " + str(epsilon))
     minBinSize = round(math.sqrt(n))
     numInitBins = math.floor(n/minBinSize) #total number of initial bins
-    print(str(numInitBins) + " Num of Bins\n" + str(minBinSize) +  " Min bin size\n")
 
     #(1) >=minBinsize
     #(2) ranges differ by epsilon
@@ -77,15 +76,16 @@ def make_bins(numList, sd):
         del bins[i2]
 
     # Print bins before checks
+    print("\n--- Before combining ---")
     for bin_dict in bins:
         print(bin_dict)
 
-    #(2)?
+    # (2)?
             
     # (3) Combine bins if the span is less than some epsilon
     combine_bins(lambda b, placeholder: b['span'] < epsilon )
 
-    # (4) Combine bins if the span is less than some epsilon
+    # (4) low is greater than hi of prev range (would only combine if they are equal)
     combine_bins(lambda b1, b2: b2['low'] < b1['high'] )
 
     # Print bins after checks
