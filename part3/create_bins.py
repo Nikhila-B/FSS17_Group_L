@@ -97,55 +97,54 @@ def make_bins(numList, sd):
 ################ Supervised Discretization #####################
 
 def super_ranges(table, colIndex, depIndex):
-    indep_values = get_values(table, colIndex)
+    
+    #indep_values = get_values(table, colIndex)
+    values = get_value_pairs(table, colIndex, depIndex)
+    values.sort() #sort pairs on indep value
+    numpyValues = numpy.array(values)
+
+    # Get unsupervised bins
     sd = table.cols["all"][colIndex].sd
-    if depIndex == "dom":
-        dep_values = table.doms
-    else:   
-        dep_values = get_values(table, depIndex)
-    comb_list = list(zip(indep_values,dep_values))
-    unsup_ranges = make_bins(comb_list, sd)
+    unsup_ranges = make_bins(numpyValues[:,0], sd)
 
     breaks = [] # Array of the splits to keep
-    range_indeces = list(unsup_ranges.keys())
-    x =  numpy.array(comb_list)
+    def combine(lo, hi, depList):
+        print("Looking from i = " + str(lo) + " to " + str(hi))
 
-    def combine(lo, hi, comb_list):
-        #print("Looking from " + str(lo) + " to " + str(hi))
-        x =  numpy.array(comb_list)
-        best = statistics.stdev(x[:,1])
+        # Start with full list
+        best = statistics.stdev(depList)
         cut = None
         cut_location = None
-        n = len(comb_list)
+        n = len(depList)
+        
         # for each split:
         # - Get values to the left and right of split
         # - Calculate expected value of the split
         # - If split is better so far, set best and cut
         i = 0
         for j in range(lo, hi):
-            #print("--- Looking at spliting after range " + str(j))
+            print("--- Looking at spliting after range " + str(j))
             cur_bin_size = unsup_ranges[j]["n"]
-            l = comb_list[0:i+cur_bin_size]
-            l = numpy.array(l)
-            l = l[:,1]
-            r = comb_list[i+cur_bin_size:]
-            r = numpy.array(r)
-            r = r[:,1]
+            left = depList[0:i+cur_bin_size]
+            right = depList[i+cur_bin_size:]
+            print("--- Left size: " + str(len(left)))
+            print("--- Right size: " + str(len(right)))
             i += cur_bin_size
-            exp_val = (len(l)/n)*statistics.stdev(l) + (len(r)/n)*statistics.stdev(r)
+            exp_val = (len(left)/n)*statistics.stdev(left) + (len(right)/n)*statistics.stdev(right)
             if exp_val < best:
                 cut = j
                 cut_location = i
                 best = exp_val
-        #print("Found best cut: " + str(cut) + "\n")
+        print("Found best cut: " + str(cut) + "\n")
 
         # Recurse!
         if cut is not None:
-            combine(lo,cut,comb_list[0:cut_location])
+            combine(lo,cut,depList[0:cut_location])
             combine(cut+1,hi,comb_list[cut_location:])
         else:
             breaks.append(hi)
 
+    #We fixed until here
     combine(range_indeces[0], range_indeces[len(range_indeces)-1], comb_list)
     super_ranges = create_supers(unsup_ranges, breaks)
     printDictionary(super_ranges)
@@ -195,6 +194,18 @@ def get_values(table, colIndex):
         value = row.cells[colIndex]
         if value is not None:
             values.append(value)
+    return values
+
+def get_value_pairs(table, colIndex, depIndex):
+    values = []
+    for r in table.rows:
+        row = table.rows[r]
+        indep = row.cells[colIndex]
+        if depIndex == "dom":
+            dep = table.doms[r]
+        else:   
+            dep = row.cells[depIndex]
+        values.append([indep, dep])
     return values
 
 
