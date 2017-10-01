@@ -80,14 +80,7 @@ class Tbl:
         show_num = 5
         top = sorted_keys[:show_num]
         bottom = sorted_keys[-show_num:]
-        for i, r in self.rows.items():
-            print(i)
-        for i, r in self.rows.items():
-            print(r.rid)
             
-        print(top)
-        print(bottom)
-
         print()
         print("DOMINATION RESULTS")
         print("Header" + str(self.spec))

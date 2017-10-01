@@ -54,16 +54,18 @@ def make_bins(numList, sd):
 
     # Traverses bins and combines bins if they match conditionFunc
     def combine_bins(conditionFunc):
+
+        def stop_merging(arr):
+            return len(arr) <= 1
+
         i = 0
         while i < len(bins):
-            if len(bins) <= 1:
-                break
             if i == len(bins)-1:
-                while conditionFunc(bins[i-1], bins[i]):
+                while not stop_merging and conditionFunc(bins[i-1], bins[i]):
                     merge_bins(i-1, 1)
                     i -= 1 # If you've deleted the last, now look at what you just merged into
             else:
-                while conditionFunc(bins[i], bins[i+1]): ## IOB ERROR!!
+                while not stop_merging and conditionFunc(bins[i], bins[i+1]):
                     merge_bins(i, i+1)
             i += 1
 
@@ -86,7 +88,7 @@ def make_bins(numList, sd):
     combine_bins(lambda b, placeholder: b['span'] < epsilon )
 
     # (4) low is greater than hi of prev range (would only combine if they are equal)
-    #combine_bins(lambda b1, b2: b2['low'] < b1['high'] )
+    combine_bins(lambda b1, b2: b2['low'] < b1['high'] )
 
     # Print bins after checks
     print("\n--- After combining: END of Unsupervised  ---")
@@ -170,15 +172,6 @@ def create_supers(unsup_ranges, splits):
     
 
 ################ Helpers #####################
-# delete none value keys
-def cleanDict(dictionary):
-    clean_dict = {}
-    i = 1
-    for key, val in dictionary.items():
-        if(val is not None):
-            clean_dict[i] = val
-            i += 1
-    return clean_dict
 #print the dictionary
 def printDictionary(dictionary):
     for key,value in dictionary.items():
@@ -243,4 +236,4 @@ for val in randomValues:
 print("\n================ UNSUPERVISED BINS ================")
 #ranges(table, 0)
 #print("\n================ SUPERVISED BINS ==================")
-super_ranges(table, 0, 1)
+#super_ranges(table, 0, 1)

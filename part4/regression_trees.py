@@ -11,7 +11,6 @@ sys.path.insert(0, '../part2')
 sys.path.insert(0, '../part3')
 import tbl
 import create_bins
-import discretizer
 import statistics
 
 # Command line args
@@ -24,6 +23,16 @@ fileName = sys.argv[1]
 tooFew   = int(sys.argv[2])
 maxDepth = int(sys.argv[3])
 
+# change the numeric values for a given col to the binID
+def discretize_column(table, colIndex, superRanges):
+    for r in table.rows:
+        row = table.rows[r]
+        value = row.cells[colIndex]
+        for superRange in superRanges:
+            if(value <= superRange["most"]):
+                row.cells[colIndex] = superRange["label"] #replace the value with the id
+                break # move to next row
+            
 # Apply supervised discretization to all independent columns
 # Build Tree Recursively:
 #    - Try spliting on ranges for each column
@@ -39,12 +48,9 @@ table = tbl.Tbl()
 table.fromCsv(fileName)
 dom = table.dom()
 for i, col in table.cols_x["nums"].items():
-    print(i)
-    print(col.txt)
-for i, col in table.cols_x["nums"].items():
     s_ranges = create_bins.super_ranges(table, col.pos, "dom")
-    print(s_ranges)
-    discretizer.discretize_column(table, col.pos, s_ranges)
+    #print(s_ranges)
+    discretize_column(table, col.pos, s_ranges)
 ##table.update({0: "$indep1", 1: "$indep2"})#, 2:"$indep3"})
 ##rows = [{0: "1", 1: "2", 3: ""},
 ##        {0: "1", 1: "6", 3: ""},
@@ -105,7 +111,7 @@ def split(node):
     # Split on the column who reduces variability of dom
     # Stop when: Spliting does not improve variability
     nodeVariability = statistics.stdev(getDomsFromRows(node.rows))
-    print("... So should get " + str(nodeVariability))
+    #print("... So should get " + str(nodeVariability))
     if bestSplitVal < nodeVariability: 
         node.splitOn = table.cols["all"][bestSplitCol].txt
         for key, rowArr in bestSplitRows.items():
@@ -122,7 +128,6 @@ def split(node):
             #   - There are tooFew examples
             #   - Depth is too much
             if (len(rowArr) > tooFew) and (node.depth < maxDepth):
-                print("Splitting...")
                 split(child)
                 
 
