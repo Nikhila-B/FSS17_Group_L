@@ -94,6 +94,7 @@ def make_bins(numList, sd):
     print("\n--- After combining: END of Unsupervised  ---")
     for bin_dict in bins:
         print(bin_dict)
+    print()
 
     return bins
 
@@ -110,7 +111,7 @@ def super_ranges(table, colIndex, depIndex):
     # Get unsupervised bins
     sd = table.cols["all"][colIndex].sd
     unsup_ranges = make_bins(numpyValues[:,0], sd)
-
+    
     breaks = [] # Array of the splits to keep
     def combine(lo, hi, depList):
         print("Looking from i = " + str(lo) + " to " + str(hi))
@@ -120,6 +121,8 @@ def super_ranges(table, colIndex, depIndex):
         cut = None
         cut_location = None
         n = len(depList)
+
+        print("Original best: " + str(best))
         
         # for each split:
         # - Get values to the left and right of split
@@ -134,11 +137,12 @@ def super_ranges(table, colIndex, depIndex):
             print("--- Left size: " + str(len(left)))
             print("--- Right size: " + str(len(right)))
             i += cur_bin_size
-            exp_val = (len(left)/n)*statistics.stdev(left) + (len(right)/n)*statistics.stdev(right)
+            exp_val = ((len(left)/n)*statistics.stdev(left)) + ((len(right)/n)*statistics.stdev(right))
             if exp_val < best:
                 cut = j
                 cut_location = i
                 best = exp_val
+                print("Found new best: " + str(best))
         print("Found best cut: " + str(cut) + "\n")
 
         # Recurse!
@@ -152,10 +156,22 @@ def super_ranges(table, colIndex, depIndex):
     combine(0, len(unsup_ranges)-1, numpyValues[:,1]) # [ 0 - first bin, n - last bin, depList values]
     super_ranges_list = create_supers(unsup_ranges, breaks)
     
+    print("Printing before ranges.")
+    i = 0
+    for j in unsup_ranges:
+        n = j["n"]
+        print(numpyValues[:,1][i:i+n])
+        i += n
 
-    print("\n--- After Supervised - END of supervised ---\n")
-    for bin_dict in super_ranges_list:
-        print(bin_dict)
+    print("\nPrinting after ranges.")
+    start = 0
+    last = 0
+    for i, bin_dict in enumerate(unsup_ranges):
+        n = bin_dict["n"]
+        if(i in breaks):
+            print(numpyValues[:,1][start:last+n])
+            start = last + n
+        last += n
     
     return super_ranges_list
     
@@ -233,7 +249,9 @@ for val in randomValues:
 
 
 # Run dicretizers
-print("\n================ UNSUPERVISED BINS ================")
+#print("\n================ UNSUPERVISED BINS ================")
 #ranges(table, 0)
-#print("\n================ SUPERVISED BINS ==================")
-#super_ranges(table, 0, 1)
+print("\n================ SUPERVISED BINS ==================")
+supers = super_ranges(table, 0, 1)
+#for bin_dict in supers:
+    #print(bin_dict)
