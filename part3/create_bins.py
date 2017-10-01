@@ -63,7 +63,7 @@ def make_bins(numList, sd):
                     merge_bins(i-1, 1)
                     i -= 1 # If you've deleted the last, now look at what you just merged into
             else:
-                while conditionFunc(bins[i], bins[i+1]):
+                while conditionFunc(bins[i], bins[i+1]): ## IOB ERROR!!
                     merge_bins(i, i+1)
             i += 1
 
@@ -86,12 +86,14 @@ def make_bins(numList, sd):
     combine_bins(lambda b, placeholder: b['span'] < epsilon )
 
     # (4) low is greater than hi of prev range (would only combine if they are equal)
-    combine_bins(lambda b1, b2: b2['low'] < b1['high'] )
+    #combine_bins(lambda b1, b2: b2['low'] < b1['high'] )
 
     # Print bins after checks
-    print("\n--- After combining ---")
+    print("\n--- After combining: END of Unsupervised  ---")
     for bin_dict in bins:
         print(bin_dict)
+
+    return bins
 
         
 ################ Supervised Discretization #####################
@@ -140,41 +142,46 @@ def super_ranges(table, colIndex, depIndex):
         # Recurse!
         if cut is not None:
             combine(lo,cut,depList[0:cut_location])
-            combine(cut+1,hi,comb_list[cut_location:])
+            combine(cut+1,hi,depList[cut_location:])
         else:
-            breaks.append(hi)
+            breaks.append(hi) # apending the bin id
 
-    #We fixed until here
-    combine(range_indeces[0], range_indeces[len(range_indeces)-1], comb_list)
-    super_ranges = create_supers(unsup_ranges, breaks)
-    printDictionary(super_ranges)
-    return super_ranges
+    # TODO - someone double check the first call arguments?
+    combine(0, len(unsup_ranges)-1, numpyValues[:,1]) # [ 0 - first bin, n - last bin, depList values]
+    super_ranges_list = create_supers(unsup_ranges, breaks)
+    
+
+    print("\n--- After Supervised - END of supervised ---\n")
+    for bin_dict in super_ranges_list:
+        print(bin_dict)
+    
+    return super_ranges_list
     
 
 # Pass the ranges and indeces of ranges you want to break at the top of
 def create_supers(unsup_ranges, splits):
-    super_ranges = {}
-    i = 1
-    for key, u_range in unsup_ranges.items():
-        if key in splits:
-            super_ranges[i] = {"label":i, "most":u_range["high"]}
-            i += 1
-    return super_ranges
-
+    super_ranges_list = []
+    for i in splits:
+        values = {}
+        values['label'] = i
+        values['most'] = unsup_ranges[i]["high"]
+        super_ranges_list.append(values)
+    return super_ranges_list
+    
 
 ################ Helpers #####################
 # delete none value keys
-def cleanDict(dict):
+def cleanDict(dictionary):
     clean_dict = {}
     i = 1
-    for key, val in dict.items():
+    for key, val in dictionary.items():
         if(val is not None):
             clean_dict[i] = val
             i += 1
     return clean_dict
 #print the dictionary
-def printDictionary(dict):
-    for key,value in dict.items():
+def printDictionary(dictionary):
+    for key,value in dictionary.items():
         print(str(key) + ": " + str(value))
     return
 
@@ -234,6 +241,6 @@ for val in randomValues:
 
 # Run dicretizers
 print("\n================ UNSUPERVISED BINS ================")
-ranges(table, 0)
+#ranges(table, 0)
 #print("\n================ SUPERVISED BINS ==================")
-#super_ranges(table, 0, 1)
+super_ranges(table, 0, 1)
