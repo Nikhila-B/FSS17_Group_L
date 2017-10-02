@@ -231,7 +231,8 @@ table = tbl.Tbl();
 table.update({0:"$someNumeric"})
 randomValues = randomList(50)
 for val in randomValues:
-    r = 2*random.random()/100
+    #r = 2*random.random()/100
+    r = 0
     #print(r)
     if val < .2:
         y = .2 + r

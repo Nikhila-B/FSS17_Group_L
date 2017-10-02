@@ -142,10 +142,12 @@ def printTree(node):
     for key, child in node.children.items():
         for i in range(1, child.depth):
             sys.stdout.write('| ')
-        sys.stdout.write(str(node.splitOn) + " = " + str(key) + "        ")
-        sys.stdout.write('n = ' + str(len(child.rows)))
-        sys.stdout.write(', mu = ' + str(statistics.mean(getDomsFromRows(child.rows))))
-        sys.stdout.write(', sd = ' + str(child.v))
+        
+        sys.stdout.write(str(node.splitOn) + " = " + str(key))
+        if len(child.children) == 0:
+            sys.stdout.write('        n = ' + str(len(child.rows)))
+            sys.stdout.write(', mu = ' + str(statistics.mean(getDomsFromRows(child.rows))))
+            sys.stdout.write(', sd = ' + str(child.v))
         sys.stdout.write('\n')
         printTree(child)
 
