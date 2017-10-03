@@ -43,7 +43,6 @@ def discretize_column(table, colIndex, superRanges):
 #        - Depth is too much
 
 ################ Read table and discretize #####################
-# Create fake table for now
 table = tbl.Tbl()
 table.fromCsv(fileName)
 dom = table.dom()
@@ -51,18 +50,6 @@ for i, col in table.cols_x["nums"].items():
     s_ranges = create_bins.super_ranges(table, col.pos, "dom")
     #print(s_ranges)
     discretize_column(table, col.pos, s_ranges)
-##table.update({0: "$indep1", 1: "$indep2"})#, 2:"$indep3"})
-##rows = [{0: "1", 1: "2", 3: ""},
-##        {0: "1", 1: "6", 3: ""},
-##        {0: "2", 1: "6", 3: ""},
-##        {0: "2", 1: "6", 3: ""},
-##        {0: "4", 1: "7", 3: ""}]
-##dom = {0:1, 1:2, 2:3, 3:3, 4:3}
-##for row in rows:
-##    table.update(row)
-
-#for i, col in table.cols["all"].items():
-    #col.summarize()
 
 colList = list(table.cols_x["all"].keys())
 rowList = list(table.rows.keys())
@@ -116,10 +103,9 @@ def split(node):
         node.splitOn = table.cols["all"][bestSplitCol].txt
         for key, rowArr in bestSplitRows.items():
             child = Node(rowArr)
-            if len(rowArr) == 1:
-                child.v = 0
-            if len(rowArr) > 1:
-                child.v = statistics.stdev(getDomsFromRows(rowArr))
+            if len(rowArr) < tooFew:
+                continue
+            child.v = statistics.stdev(getDomsFromRows(rowArr))
             child.depth = node.depth + 1
             node.children[key] = child
 
@@ -127,7 +113,7 @@ def split(node):
             #   - Spliting does not improve variability (see outer if)
             #   - There are tooFew examples
             #   - Depth is too much
-            if (len(rowArr) > tooFew) and (node.depth < maxDepth):
+            if node.depth < maxDepth:
                 split(child)
                 
 
@@ -146,8 +132,9 @@ def printTree(node):
         sys.stdout.write(str(node.splitOn) + " = " + str(key))
         if len(child.children) == 0:
             sys.stdout.write('        n = ' + str(len(child.rows)))
-            sys.stdout.write(', mu = ' + str(statistics.mean(getDomsFromRows(child.rows))))
-            sys.stdout.write(', sd = ' + str(child.v))
+            mu = statistics.mean(getDomsFromRows(child.rows))
+            sys.stdout.write(', mu = ' + str(round(mu, 2)))
+            sys.stdout.write(', sd = ' + str(round(child.v,2)))
         sys.stdout.write('\n')
         printTree(child)
 

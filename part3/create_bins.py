@@ -138,7 +138,7 @@ def super_ranges(table, colIndex, depIndex):
             print("--- Right size: " + str(len(right)))
             i += cur_bin_size
             exp_val = ((len(left)/n)*statistics.stdev(left)) + ((len(right)/n)*statistics.stdev(right))
-            if exp_val < best:
+            if exp_val < best: #and best-exp_val > 10e-2:
                 cut = j
                 cut_location = i
                 best = exp_val
@@ -252,7 +252,6 @@ for val in randomValues:
 # Run dicretizers
 #print("\n================ UNSUPERVISED BINS ================")
 #ranges(table, 0)
-print("\n================ SUPERVISED BINS ==================")
-supers = super_ranges(table, 0, 1)
-#for bin_dict in supers:
-    #print(bin_dict)
+#print("\n================ SUPERVISED BINS ==================")
+#supers = super_ranges(table, 0, 1)
+
