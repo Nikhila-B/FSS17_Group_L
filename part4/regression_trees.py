@@ -48,8 +48,9 @@ table.fromCsv(fileName)
 dom = table.dom()
 for i, col in table.cols_x["nums"].items():
     s_ranges = create_bins.super_ranges(table, col.pos, "dom")
-    #print(s_ranges)
+    print(s_ranges)
     discretize_column(table, col.pos, s_ranges)
+    
 
 colList = list(table.cols_x["all"].keys())
 rowList = list(table.rows.keys())
@@ -125,7 +126,10 @@ def getDomsFromRows(rowsList):
     
 
 def printTree(node):
-    for key, child in node.children.items():
+    keys = [int(key) for key in list(node.children.keys())]
+    keys.sort()
+    for key in keys:
+        child = node.children[str(key)]
         for i in range(1, child.depth):
             sys.stdout.write('| ')
         

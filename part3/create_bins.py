@@ -24,7 +24,7 @@ def make_bins(numList, sd):
     n = len(numList)
     epsilon = 0.2*statistics.stdev(numList)
     print("Epsilon: " + str(epsilon))
-    minBinSize = round(math.sqrt(n))
+    minBinSize = math.ceil(math.sqrt(n))
     numInitBins = math.floor(n/minBinSize) #total number of initial bins
 
     #(1) >=minBinsize
@@ -138,7 +138,7 @@ def super_ranges(table, colIndex, depIndex):
             print("--- Right size: " + str(len(right)))
             i += cur_bin_size
             exp_val = ((len(left)/n)*statistics.stdev(left)) + ((len(right)/n)*statistics.stdev(right))
-            if exp_val < best: #and best-exp_val > 10e-2:
+            if exp_val < best:# and best-exp_val > 10e-1:
                 cut = j
                 cut_location = i
                 best = exp_val
@@ -179,11 +179,14 @@ def super_ranges(table, colIndex, depIndex):
 # Pass the ranges and indeces of ranges you want to break at the top of
 def create_supers(unsup_ranges, splits):
     super_ranges_list = []
-    for i in splits:
+    splits.sort()
+    i = 1
+    for split in splits:
         values = {}
         values['label'] = i
-        values['most'] = unsup_ranges[i]["high"]
+        values['most'] = unsup_ranges[split]["high"]
         super_ranges_list.append(values)
+        i += 1
     return super_ranges_list
     
 
@@ -253,5 +256,5 @@ for val in randomValues:
 #print("\n================ UNSUPERVISED BINS ================")
 #ranges(table, 0)
 #print("\n================ SUPERVISED BINS ==================")
-#supers = super_ranges(table, 0, 1)
+supers = super_ranges(table, 0, 1)
 
