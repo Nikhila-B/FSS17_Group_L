@@ -207,7 +207,8 @@ class Num:
 
     def fromString(self, value):
         try:
-            return float(value)
+            if value is not None:
+                return float(value)
         except:
             print("Error: Invalid float value: " + value)
             raise

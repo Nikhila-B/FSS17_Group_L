@@ -29,8 +29,8 @@ def discretize_column(table, colIndex, superRanges):
         row = table.rows[r]
         value = row.cells[colIndex]
         for superRange in superRanges:
-            if(value <= superRange["most"]):
-                row.cells[colIndex] = superRange["label"] #replace the value with the id
+            if value is not None and (value <= superRange["most"]):
+                row.cells[colIndex] = int(superRange["label"]) #replace the value with the id
                 break # move to next row
             
 # Apply supervised discretization to all independent columns
@@ -55,6 +55,7 @@ for i, col in table.cols_x["nums"].items():
 colList = list(table.cols_x["all"].keys())
 rowList = list(table.rows.keys())
 
+################ Recursively split table #####################
 class Node():
     def __init__(self, rows):
         self.v = None
@@ -63,7 +64,6 @@ class Node():
         self.splitOn = None # Column id that node was split on
         self.children = {} # Dictionary (by bin id) of chlid nodes
 
-################ Recursively split table #####################
 def expValue(rowsByVal, n):
     expVal = 0
     for key, rowArr in rowsByVal.items():
@@ -86,7 +86,9 @@ def split(node):
             return
         rowsByVal = {} # Dictonary to find rows for each different column value
         for row in node.rows:
-            cell = str(int(table.rows[row].cells[col]))
+            cell = table.rows[row].cells[col]
+            if cell is None:
+                continue
             if cell not in rowsByVal: # Create key if hasn't been created yet
                 rowsByVal[cell] = []
             rowsByVal[cell].append(row)
@@ -103,9 +105,9 @@ def split(node):
     if bestSplitVal < nodeVariability: 
         node.splitOn = table.cols["all"][bestSplitCol].txt
         for key, rowArr in bestSplitRows.items():
-            child = Node(rowArr)
             if len(rowArr) < tooFew:
                 continue
+            child = Node(rowArr)
             child.v = statistics.stdev(getDomsFromRows(rowArr))
             child.depth = node.depth + 1
             node.children[key] = child
@@ -126,10 +128,7 @@ def getDomsFromRows(rowsList):
     
 
 def printTree(node):
-    keys = [int(key) for key in list(node.children.keys())]
-    keys.sort()
-    for key in keys:
-        child = node.children[str(key)]
+    for key, child in sorted(node.children.items()):
         for i in range(1, child.depth):
             sys.stdout.write('| ')
         
@@ -143,8 +142,12 @@ def printTree(node):
         printTree(child)
 
 root = Node(rowList)
-root.v = statistics.stdev(list(dom.values()))
+domValues = list(dom.values())
+root.v = statistics.stdev(domValues)
+print("\nin=" + str(len(domValues))
+      + " mu=" + str(round(statistics.mean(domValues),2))
+      + " sd=" + str(round(root.v,2)))
+
 split(root)
-print()
 printTree(root)
 

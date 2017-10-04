@@ -103,7 +103,6 @@ def make_bins(numList, sd):
 
 def super_ranges(table, colIndex, depIndex):
     
-    #indep_values = get_values(table, colIndex)
     values = get_value_pairs(table, colIndex, depIndex)
     values.sort() #sort pairs on indep value
     numpyValues = numpy.array(values)
@@ -220,11 +219,12 @@ def get_value_pairs(table, colIndex, depIndex):
     for r in table.rows:
         row = table.rows[r]
         indep = row.cells[colIndex]
-        if depIndex == "dom":
-            dep = table.doms[r]
-        else:   
-            dep = row.cells[depIndex]
-        values.append([indep, dep])
+        if indep is not None:
+            if depIndex == "dom":
+                dep = table.doms[r]
+            else:   
+                dep = row.cells[depIndex]
+            values.append([indep, dep])
     return values
 
 
