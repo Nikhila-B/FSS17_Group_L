@@ -160,17 +160,7 @@ class Row:
 class Num:
     #dictionary of num properties - declared in config file for lua
     # https://lualure.github.io/info/config
-    num ={'conf' : 95,
-	'small' : 0.38,
-	'first' : 3,
-	'last' : 96,
-	'criticals ' : {
-				'[95]': {'[3]': 3.182, '[6]': 2.447, '[12]': 2.179,
-						  '[24]': 2.064, '[48]': 2.011, '[96]': 1.985},
-				'[99]': {'[3]': 5.841, '[6]': 3.707, '[12]': 3.055,
-						  '[24]': 2.797, '[48]': 2.682, '[96]': 2.625}
-	}
-	
+
     def __init__(self):
         self.n = 0 #Total number of cells
         self.mu = 0
@@ -179,6 +169,17 @@ class Num:
         self.high = (-math.exp(32)) #Heightest Value in the column
         self.low = (math.exp(32)) #Lowest value in the column
         self.weight = 1 #weight of the column TODO isn't this covered in spec?
+        self.num ={'conf' : 95,
+                   'small' : 0.38,
+                   'first' : 3,
+                   'last' : 96,
+                   'criticals ' : {
+                       '[95]': {'[3]': 3.182, '[6]': 2.447, '[12]': 2.179,
+                                '[24]': 2.064, '[48]': 2.011, '[96]': 1.985},
+                       '[99]': {'[3]': 5.841, '[6]': 3.707, '[12]': 3.055,
+                                '[24]': 2.797, '[48]': 2.682, '[96]': 2.625}
+                        }
+                   }
 
     # Add a new value to the column, and update column stats
     def update(self, newVal):
@@ -235,16 +236,17 @@ class Num:
         print("Low: " + str(self.low))
 
     # Hedges test from num class - Effect Size test
-    def hedges(self, r):
-        nom = (self.n - 1)*self.sd**2 + (r.n -1)*r.sd**2
-        denom = (self.n -1) + (r.n -1)
-        sp = math.sqrt(nom/denom)
-        g = math.abs(self.mu-r.mu)/sp
-        c = 1 - 3.0 / (4*(self.n + r.n - 2) - 1) -- handle small samples
-        return g * c > num['small'] 
 
-    # Helper method for the significance test -  ttest below
-    def  ttest1(df,first,last,crit):
+    def hedges(self, i,j):
+        nom   = (i.n - 1)*i.s**2 + (j.n - 1)*j.s**2
+        denom = (i.n - 1) + (j.n - 1)
+        sp    = ( nom / denom )**0.5
+        delta = abs(i.mu - j.mu) / sp
+        c     = 1 - 3.0 / (4*(i.n + j.n - 2) - 1)
+        return delta * c < 0.38
+
+        # Helper method for the significance test -  ttest below
+    def  ttest1(self, df,first,last,crit):
         if df <= first:
             ## in order to access the value for the 95th confidence [3] key
             key = "" + first + ""
@@ -258,27 +260,23 @@ class Num:
             while n1 < last:
                 n2=n1*2
                 if df >= n1 and df <= n2:
-                     old,new = crit[n1],crit[n2] #is this legal in python
-                     return old + (new-old) * (df-n1)/(n2-n1)
+                    old,new = crit[n1],crit[n2] #is this legal in python
+                    return old + (new-old) * (df-n1)/(n2-n1)
                 n1=n1*2
         return n1 # is this what we should be returning?
 
     # ttest from num class - Significance test
-    def ttest(self, r):
-        t = (self.mu -r.mu) /
-                math.sqrt(max(1e-64, self.sd**2/self.n + r.sd**2/r.n ))
-        a = self.sd**2/self.n
-        b  = r.sd**2/r.n
-        df = (a + b)**2 / (1e-64 + a**2/(self.n-1) + b**2/(r.n - 1))
-        c  = ttest1(math.floor( df + 0.5 ), 
-                    num["first"],
-                    num["last"],
-                    num["criticals"]["[95]"]) # check the last argument??
+    def ttest(self, i, j):
+        t = (i.mu -j.mu)/math.sqrt(max(1e-64, i.sd**2/i.n + j.sd**2/j.n ))
+        a = i.sd**2/i.n
+        b  = j.sd**2/j.n
+        df = (a + b)**2 / (1e-64 + a**2/(i.n-1) + b**2/(j.n - 1))
+        c  = self.ttest1(math.floor( df + 0.5 ), self.num["first"], self.num["last"],self.num["criticals"]["[95]"]) # check the last argument??
         return math.abs(t) > c
-    
+
     # checks for both hedges test and ttest
-    def same(self, r):
-        return not (hedges(self,r) and ttest(self, r))
+    def same(self, i,j):
+        return not (self.hedges(i,j) and self.ttest(i, j))
 
 
 class Sym:
