@@ -146,6 +146,7 @@ class Row:
         return sum1/n < sum2/n
         
 
+
     # Calculate distance between two rows
     @staticmethod
     def distance(r1, r2, t):
