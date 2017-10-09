@@ -14,7 +14,7 @@ def create_tree(table, tooFew, maxDepth):
     class Node():
         def __init__(self, rows):
             self.isRoot = False
-            self.v = None
+            self.stats = None
             self.depth = 0
             self.rows = rows
             self.splitOn = None # Column id that node was split on
@@ -64,7 +64,8 @@ def create_tree(table, tooFew, maxDepth):
                 if len(rowArr) < tooFew:
                     continue
                 child = Node(rowArr)
-                child.v = statistics.stdev(getDomsFromRows(rowArr))
+                doms = getDomsFromRows(rowArr)
+                child.stats = {"n": len(doms), "sd": statistics.stdev(doms), "mu": statistics.mean(doms)}
                 child.depth = node.depth + 1
                 node.children[key] = child
 
@@ -87,18 +88,16 @@ def create_tree(table, tooFew, maxDepth):
         if node.isRoot is True:
             domValues = getDomsFromRows(node.rows)
             print("\nin=" + str(len(domValues))
-              + " mu=" + str(round(statistics.mean(domValues),2))
-              + " sd=" + str(round(node.v,2)))
+              + " mu=" + str(round(node.stats["mu"],2))
+              + " sd=" + str(round(node.stats["sd"],2)))
         for key, child in sorted(node.children.items()):
             for i in range(1, child.depth):
                 sys.stdout.write('| ')
-            
             sys.stdout.write(str(node.splitOn) + " = " + str(key))
             if len(child.children) == 0:
                 sys.stdout.write('        n = ' + str(len(child.rows)))
-                mu = statistics.mean(getDomsFromRows(child.rows))
-                sys.stdout.write(', mu = ' + str(round(mu, 2)))
-                sys.stdout.write(', sd = ' + str(round(child.v,2)))
+                sys.stdout.write(', mu = ' + str(round(node.stats["mu"], 2)))
+                sys.stdout.write(', sd = ' + str(round(node.stats["sd"],2)))
             sys.stdout.write('\n')
             printTree(child)
 
@@ -107,7 +106,8 @@ def create_tree(table, tooFew, maxDepth):
     rowList = list(table.rows.keys())
     root = Node(rowList)
     domValues = list(dom.values())
-    root.v = statistics.stdev(domValues)
+    #TODO: would be much nicer to include this in recursive function
+    root.stats = {"n": len(domValues), "sd": statistics.stdev(domValues), "mu": statistics.mean(domValues)}
     root.isRoot = True
     
     split(root)

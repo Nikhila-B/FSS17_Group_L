@@ -237,8 +237,8 @@ class Num:
         print("Low: " + str(self.low))
 
     # Hedges test from num class - Effect Size test
-
-    def hedges(self, i,j):
+    @staticmethod
+    def hedges(i,j):
         nom   = (i.n - 1)*i.s**2 + (j.n - 1)*j.s**2
         denom = (i.n - 1) + (j.n - 1)
         sp    = ( nom / denom )**0.5
@@ -246,8 +246,9 @@ class Num:
         c     = 1 - 3.0 / (4*(i.n + j.n - 2) - 1)
         return delta * c < 0.38
 
-        # Helper method for the significance test -  ttest below
-    def  ttest1(self, df,first,last,crit):
+    # Helper method for the significance test -  ttest below
+    @staticmethod
+    def ttest1(df,first,last,crit):
         if df <= first:
             ## in order to access the value for the 95th confidence [3] key
             key = "" + first + ""
@@ -267,17 +268,19 @@ class Num:
         return n1 # is this what we should be returning?
 
     # ttest from num class - Significance test
-    def ttest(self, i, j):
+    @staticmethod
+    def ttest(i, j):
         t = (i.mu -j.mu)/math.sqrt(max(1e-64, i.sd**2/i.n + j.sd**2/j.n ))
         a = i.sd**2/i.n
         b  = j.sd**2/j.n
         df = (a + b)**2 / (1e-64 + a**2/(i.n-1) + b**2/(j.n - 1))
-        c  = self.ttest1(math.floor( df + 0.5 ), self.num["first"], self.num["last"],self.num["criticals"]["[95]"]) # check the last argument??
+        c  = Num.ttest1(math.floor( df + 0.5 ), Num.num["first"], Num.num["last"],Num.num["criticals"]["[95]"]) # check the last argument??
         return math.abs(t) > c
 
     # checks for both hedges test and ttest
-    def same(self, i,j):
-        return not (self.hedges(i,j) and self.ttest(i, j))
+    @staticmethod
+    def same(i,j):
+        return not (Num.hedges(i,j) and Num.ttest(i, j))
 
 
 class Sym:
