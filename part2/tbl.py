@@ -244,7 +244,7 @@ class Num:
         sp    = ( nom / denom )**0.5
         delta = abs(i.mu - j.mu) / sp
         c     = 1 - 3.0 / (4*(i.n + j.n - 2) - 1)
-        return delta * c < 0.38
+        return delta * c > 0.38
 
     # Helper method for the significance test -  ttest below
     @staticmethod

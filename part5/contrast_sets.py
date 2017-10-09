@@ -13,6 +13,9 @@ class Stats:
         self.sd = statsObj["sd"]
         self.mu = statsObj["mu"]
 
+    def print(self):
+        print(str(self.n) + " " + str(self.sd) + " " + str(self.mu))        
+
 def has(branch_list):
     out = []
     for b in branch_list:
@@ -63,7 +66,12 @@ def contrasts(branches, better):
                 num1 = branch1["branches"][-1]["stats"]
                 num2 = branch2["branches"][-1]["stats"]
                 if better(num2.mu, num1.mu): #RULE1
+                    print("Num2 is better than num1 " + str(num2.mu) + " " + str(num1.mu))
+                    num1.print()
+                    num2.print()
+                    
                     if not tbl.Num.same(num1, num2): #RULE2
+                        print("They are not the same")
                         inc = delta(branch2.has, branch1.has)
                         if len(inc) > 0: #RULE3
                             out.append({i:i, j:j, ninc:len(inc),
