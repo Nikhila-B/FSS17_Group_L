@@ -239,7 +239,7 @@ class Num:
     # Hedges test from num class - Effect Size test
     @staticmethod
     def hedges(i,j):
-        nom   = (i.n - 1)*i.s**2 + (j.n - 1)*j.s**2
+        nom   = (i.n - 1)*i.sd**2 + (j.n - 1)*j.sd**2
         denom = (i.n - 1) + (j.n - 1)
         sp    = ( nom / denom )**0.5
         delta = abs(i.mu - j.mu) / sp
