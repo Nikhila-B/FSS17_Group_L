@@ -45,14 +45,14 @@ def branches(node):
 # Compute the delta between two branches
 def member(twin0, twins):
     for twin1 in twins:
-        if twin0.attr == twin1.attr and twin0.val == twin1.att:
+        if twin0['attr'] == twin1['attr'] and twin0['val'] == twin1['val']:
             return True
     return False
 def delta(t1, t2):
     out = []
     for twin in t1:
         if not member(twin, t2):
-            out.append((twin.attr, twin.val))
+            out.append((twin['attr'], twin['val']))
     return out
 
 # returns - two branches per node
@@ -72,19 +72,19 @@ def contrasts(branches, better):
                     
                     if not tbl.Num.same(num1, num2): #RULE2
                         print("They are not the same")
-                        inc = delta(branch2.has, branch1.has)
+                        inc = delta(branch2['has'], branch1['has'])
                         if len(inc) > 0: #RULE3
-                            out.append({i:i, j:j, ninc:len(inc),
-                                        muinc:num2.mu-num1.mu, inc:inc,
-                                        branch1:branch1.has, mu1:num1.mu,
-                                        branch2:branch2.has, mu2:num2.mu})
+                            out.append({'i':i, 'j':j, 'ninc':len(inc),
+                                        'muinc':num2.mu-num1.mu, 'inc':inc,
+                                        'branch1':branch1['has'], 'mu1':num1.mu,
+                                        'branch2':branch2['has'], 'mu2':num2.mu})
         if len(out) <= 0:
             print("Error: out is empty")
         else:
-            sorted(out, key=lambda x, y: x.muinc > y.muinc)
-            print(str(i)+ " max mu: " + out[0])
-            sorted(out, key=lambda x, y: x.ninc < y.ninc)
-            print(str(i)+ " min inc: " + out[0])
+            sorted(out, key = lambda x: x['muinc'], reverse=True)
+            print(str(i)+ " max mu: " + str(out[0]))
+            sorted(out, key = lambda x: x['ninc'], reverse=True)
+            print(str(i)+ " min inc: " + str(out[0]))
         
 
 

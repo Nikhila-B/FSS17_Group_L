@@ -161,7 +161,17 @@ class Row:
 class Num:
     #dictionary of num properties - declared in config file for lua
     # https://lualure.github.io/info/config
-
+    num ={'conf' : 95,
+               'small' : 0.38,
+               'first' : 3,
+               'last' : 96,
+               'criticals' : {
+                   '[95]': {'[3]': 3.182, '[6]': 2.447, '[12]': 2.179,
+                            '[24]': 2.064, '[48]': 2.011, '[96]': 1.985},
+                   '[99]': {'[3]': 5.841, '[6]': 3.707, '[12]': 3.055,
+                            '[24]': 2.797, '[48]': 2.682, '[96]': 2.625}
+               }
+               }
     def __init__(self):
         self.n = 0 #Total number of cells
         self.mu = 0
@@ -170,17 +180,7 @@ class Num:
         self.high = (-math.exp(32)) #Heightest Value in the column
         self.low = (math.exp(32)) #Lowest value in the column
         self.weight = 1 #weight of the column TODO isn't this covered in spec?
-        self.num ={'conf' : 95,
-                   'small' : 0.38,
-                   'first' : 3,
-                   'last' : 96,
-                   'criticals ' : {
-                       '[95]': {'[3]': 3.182, '[6]': 2.447, '[12]': 2.179,
-                                '[24]': 2.064, '[48]': 2.011, '[96]': 1.985},
-                       '[99]': {'[3]': 5.841, '[6]': 3.707, '[12]': 3.055,
-                                '[24]': 2.797, '[48]': 2.682, '[96]': 2.625}
-                        }
-                   }
+
 
     # Add a new value to the column, and update column stats
     def update(self, newVal):
@@ -262,7 +262,9 @@ class Num:
             while n1 < last:
                 n2=n1*2
                 if df >= n1 and df <= n2:
-                    old,new = crit[n1],crit[n2] #is this legal in python
+                    n1_new = "[" + str(n1) + "]"
+                    n2_new = "[" + str(n2) + "]"
+                    old,new = crit[n1_new],crit[n2_new] #is this legal in python
                     return old + (new-old) * (df-n1)/(n2-n1)
                 n1=n1*2
         return n1 # is this what we should be returning?
@@ -275,7 +277,7 @@ class Num:
         b  = j.sd**2/j.n
         df = (a + b)**2 / (1e-64 + a**2/(i.n-1) + b**2/(j.n - 1))
         c  = Num.ttest1(math.floor( df + 0.5 ), Num.num["first"], Num.num["last"],Num.num["criticals"]["[95]"]) # check the last argument??
-        return math.abs(t) > c
+        return abs(t) > c
 
     # checks for both hedges test and ttest
     @staticmethod
