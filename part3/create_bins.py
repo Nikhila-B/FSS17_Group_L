@@ -232,7 +232,7 @@ def get_value_pairs(table, colIndex, depIndex):
 # Create table
 table = tbl.Tbl();
 table.update({0:"$someNumeric"})
-randomValues = randomList(50)
+randomValues = randomList(5000)
 for val in randomValues:
     #r = 2*random.random()/100
     r = 0
