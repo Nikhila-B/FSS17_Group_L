@@ -1,6 +1,13 @@
+## How to Run
 
-## Progress
+To run, go to the part5 directory and run 'contrast_sets.py ../../auto.csv 10 10'. These are the arguments for creating the tree. 
 
-We've added the statistics tests (hedges and ttest) in the num class of tbl.py from part 2. 
+There is an example output in **output.txt**.
 
-We've also added stubbed out methods in contrast_sets.py. We intend to fill these out once we get some clarification from Dr. Menzies or Jack next week.
+
+## Changes
+
+* Added the statistics tests (hedges and ttest) in the num class of tbl.py from part 2. 
+* Created create_sets.py in part5, which when run prints out the plans and monitors.
+* Updating tree code from part 4 to be usable from contrast_sets.py
+
