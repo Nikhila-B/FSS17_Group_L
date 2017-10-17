@@ -1,6 +1,6 @@
 ## How to Run
 
-To run, go to the part5 directory and run 'contrast_sets.py ../../auto.csv 10 10'. These are the arguments for creating the tree. 
+To run, go to the part5 directory and run 'python contrast_sets.py ../part2/auto.csv 10 10'. These are the arguments for creating the tree. 
 
 There is an example output in **output.txt**.
 
