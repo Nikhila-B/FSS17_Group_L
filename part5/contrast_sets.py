@@ -63,16 +63,20 @@ def contrasts(branches, better):
         out = []
         for j, branch2 in enumerate(branches):
             if i != j:
+                print("Comparing branch " + str(i) + " to branch " + str(j))
                 num1 = branch1["branches"][-1]["stats"]
                 num2 = branch2["branches"][-1]["stats"]
-                if better(num2.mu, num1.mu): #RULE1                  
+                if better(num2.mu, num1.mu): #RULE1
+                    print("    branch2 better than branch 1...")
                     if not tbl.Num.same(num1, num2): #RULE2
+                        print("    Effect size: positive, they are different");
                         inc = delta(branch2['has'], branch1['has'])
                         if len(inc) > 0: #RULE3
                             out.append({'i':i, 'j':j, 'ninc':len(inc),
                                         'muinc':num2.mu-num1.mu, 'inc':inc,
                                         'branch1':branch1['has'], 'mu1':num1.mu,
                                         'branch2':branch2['has'], 'mu2':num2.mu})
+                            print("    Delta: " + str(inc))
         if len(out) <= 0:
             print(str(i)+ " max mu: nil")
             print(str(i)+ " min inc: nil")
@@ -102,6 +106,7 @@ def monitors(branches):
 #    2) tooFew - stop splitting if there are this many or less examples
 #    3) maxDepth - stop spliiting if the tree gets any deeper than this
 # Example: python contrast_sets.py ../part2/auto.csv 10 10
+# **** there are 15 leaves, so should have 225 
 fileName = sys.argv[1]
 tooFew   = int(sys.argv[2])
 maxDepth = int(sys.argv[3])

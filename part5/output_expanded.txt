@@ -1,0 +1,1869 @@
+------------- Printing tree -----------------
+
+in=398 mu=198.5 sd=115.04
+$horsepower = 1        n = 20, mu = 198.5, sd = 115.04
+$horsepower = 2
+| $displacement = 1        n = 14, mu = 343.96, sd = 33.88
+| $displacement = 2        n = 21, mu = 343.96, sd = 33.88
+$horsepower = 3        n = 11, mu = 198.5, sd = 115.04
+$horsepower = 4
+| $displacement = 2        n = 10, mu = 283.51, sd = 41.94
+$horsepower = 5
+| $displacement = 5        n = 12, mu = 232.21, sd = 57.0
+| $displacement = 6
+| | origin = 1        n = 19, mu = 241.52, sd = 37.22
+| $displacement = 9        n = 10, mu = 232.21, sd = 57.0
+$horsepower = 6        n = 12, mu = 198.5, sd = 115.04
+$horsepower = 7        n = 57, mu = 198.5, sd = 115.04
+$horsepower = 8        n = 21, mu = 198.5, sd = 115.04
+$horsepower = 9        n = 22, mu = 198.5, sd = 115.04
+$horsepower = 10
+| $displacement = 14        n = 12, mu = 48.16, sd = 25.63
+| $displacement = 16        n = 11, mu = 48.16, sd = 25.63
+$horsepower = 11
+| $model = 1        n = 11, mu = 26.81, sd = 20.11
+
+------------- PLANS --------------------------
+Comparing branch 0 to branch 1
+Comparing branch 0 to branch 2
+Comparing branch 0 to branch 3
+Comparing branch 0 to branch 4
+Comparing branch 0 to branch 5
+Comparing branch 0 to branch 6
+Comparing branch 0 to branch 7
+Comparing branch 0 to branch 8
+Comparing branch 0 to branch 9
+Comparing branch 0 to branch 10
+Comparing branch 0 to branch 11
+Comparing branch 0 to branch 12
+Comparing branch 0 to branch 13
+Comparing branch 0 to branch 14
+Comparing branch 0 to branch 15
+Comparing branch 0 to branch 16
+Comparing branch 0 to branch 17
+Comparing branch 0 to branch 18
+Comparing branch 0 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 0 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+0 max mu: {'i': 0, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+0 min inc: {'i': 0, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 1 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$displacement', 16), ('$displacement', 14)]
+Comparing branch 1 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$displacement', 16), ('$displacement', 14)]
+Comparing branch 1 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 1 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('origin', '1')]
+Comparing branch 1 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 1 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 1 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$displacement', 2)]
+Comparing branch 1 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 1 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+Comparing branch 1 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+1 max mu: {'i': 1, 'j': 0, 'ninc': 10, 'muinc': 310.7789661319073, 'inc': [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu1': 33.18181818181818, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+1 min inc: {'i': 1, 'j': 0, 'ninc': 10, 'muinc': 310.7789661319073, 'inc': [('$horsepower', 10), ('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu1': 33.18181818181818, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 2 to branch 0
+Comparing branch 2 to branch 1
+Comparing branch 2 to branch 3
+Comparing branch 2 to branch 4
+Comparing branch 2 to branch 5
+Comparing branch 2 to branch 6
+Comparing branch 2 to branch 7
+Comparing branch 2 to branch 8
+Comparing branch 2 to branch 9
+Comparing branch 2 to branch 10
+Comparing branch 2 to branch 11
+Comparing branch 2 to branch 12
+Comparing branch 2 to branch 13
+Comparing branch 2 to branch 14
+Comparing branch 2 to branch 15
+Comparing branch 2 to branch 16
+Comparing branch 2 to branch 17
+Comparing branch 2 to branch 18
+Comparing branch 2 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 2 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+2 max mu: {'i': 2, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+2 min inc: {'i': 2, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 3 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 1
+Comparing branch 3 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 4
+Comparing branch 3 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 3 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('origin', '1')]
+Comparing branch 3 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 3 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 3 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$displacement', 2)]
+Comparing branch 3 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 3 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+Comparing branch 3 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+3 max mu: {'i': 3, 'j': 0, 'ninc': 9, 'muinc': 285.0441176470588, 'inc': [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+3 min inc: {'i': 3, 'j': 0, 'ninc': 9, 'muinc': 285.0441176470588, 'inc': [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 4 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 1
+Comparing branch 4 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 3
+Comparing branch 4 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 4 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('origin', '1')]
+Comparing branch 4 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 4 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 4 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$displacement', 2)]
+Comparing branch 4 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 4 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+Comparing branch 4 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+4 max mu: {'i': 4, 'j': 0, 'ninc': 9, 'muinc': 285.0441176470588, 'inc': [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+4 min inc: {'i': 4, 'j': 0, 'ninc': 9, 'muinc': 285.0441176470588, 'inc': [('$horsepower', 8), ('$horsepower', 9), ('$horsepower', 7), ('$horsepower', 3), ('$horsepower', 5), ('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 5 to branch 0
+Comparing branch 5 to branch 1
+Comparing branch 5 to branch 2
+Comparing branch 5 to branch 3
+Comparing branch 5 to branch 4
+Comparing branch 5 to branch 6
+Comparing branch 5 to branch 7
+Comparing branch 5 to branch 8
+Comparing branch 5 to branch 9
+Comparing branch 5 to branch 10
+Comparing branch 5 to branch 11
+Comparing branch 5 to branch 12
+Comparing branch 5 to branch 13
+Comparing branch 5 to branch 14
+Comparing branch 5 to branch 15
+Comparing branch 5 to branch 16
+Comparing branch 5 to branch 17
+Comparing branch 5 to branch 18
+Comparing branch 5 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 5 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+5 max mu: {'i': 5, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+5 min inc: {'i': 5, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 6 to branch 0
+Comparing branch 6 to branch 1
+Comparing branch 6 to branch 2
+Comparing branch 6 to branch 3
+Comparing branch 6 to branch 4
+Comparing branch 6 to branch 5
+Comparing branch 6 to branch 7
+Comparing branch 6 to branch 8
+Comparing branch 6 to branch 9
+Comparing branch 6 to branch 10
+Comparing branch 6 to branch 11
+Comparing branch 6 to branch 12
+Comparing branch 6 to branch 13
+Comparing branch 6 to branch 14
+Comparing branch 6 to branch 15
+Comparing branch 6 to branch 16
+Comparing branch 6 to branch 17
+Comparing branch 6 to branch 18
+Comparing branch 6 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 6 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+6 max mu: {'i': 6, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+6 min inc: {'i': 6, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 7 to branch 0
+Comparing branch 7 to branch 1
+Comparing branch 7 to branch 2
+Comparing branch 7 to branch 3
+Comparing branch 7 to branch 4
+Comparing branch 7 to branch 5
+Comparing branch 7 to branch 6
+Comparing branch 7 to branch 8
+Comparing branch 7 to branch 9
+Comparing branch 7 to branch 10
+Comparing branch 7 to branch 11
+Comparing branch 7 to branch 12
+Comparing branch 7 to branch 13
+Comparing branch 7 to branch 14
+Comparing branch 7 to branch 15
+Comparing branch 7 to branch 16
+Comparing branch 7 to branch 17
+Comparing branch 7 to branch 18
+Comparing branch 7 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 7 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+7 max mu: {'i': 7, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+7 min inc: {'i': 7, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 8 to branch 0
+Comparing branch 8 to branch 1
+Comparing branch 8 to branch 2
+Comparing branch 8 to branch 3
+Comparing branch 8 to branch 4
+Comparing branch 8 to branch 5
+Comparing branch 8 to branch 6
+Comparing branch 8 to branch 7
+Comparing branch 8 to branch 9
+Comparing branch 8 to branch 10
+Comparing branch 8 to branch 11
+Comparing branch 8 to branch 12
+Comparing branch 8 to branch 13
+Comparing branch 8 to branch 14
+Comparing branch 8 to branch 15
+Comparing branch 8 to branch 16
+Comparing branch 8 to branch 17
+Comparing branch 8 to branch 18
+Comparing branch 8 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 8 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+8 max mu: {'i': 8, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+8 min inc: {'i': 8, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 9 to branch 0
+Comparing branch 9 to branch 1
+Comparing branch 9 to branch 2
+Comparing branch 9 to branch 3
+Comparing branch 9 to branch 4
+Comparing branch 9 to branch 5
+Comparing branch 9 to branch 6
+Comparing branch 9 to branch 7
+Comparing branch 9 to branch 8
+Comparing branch 9 to branch 10
+Comparing branch 9 to branch 11
+Comparing branch 9 to branch 12
+Comparing branch 9 to branch 13
+Comparing branch 9 to branch 14
+Comparing branch 9 to branch 15
+Comparing branch 9 to branch 16
+Comparing branch 9 to branch 17
+Comparing branch 9 to branch 18
+Comparing branch 9 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 9 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+9 max mu: {'i': 9, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+9 min inc: {'i': 9, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 10 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 1
+Comparing branch 10 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 3
+Comparing branch 10 to branch 4
+Comparing branch 10 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('origin', '1')]
+Comparing branch 10 to branch 12
+Comparing branch 10 to branch 13
+Comparing branch 10 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$displacement', 2)]
+Comparing branch 10 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 10 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+Comparing branch 10 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+10 max mu: {'i': 10, 'j': 0, 'ninc': 4, 'muinc': 166.76078431372548, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+10 min inc: {'i': 10, 'j': 0, 'ninc': 4, 'muinc': 166.76078431372548, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 11 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 1
+Comparing branch 11 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 3
+Comparing branch 11 to branch 4
+Comparing branch 11 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 10
+Comparing branch 11 to branch 12
+Comparing branch 11 to branch 13
+Comparing branch 11 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$displacement', 2)]
+Comparing branch 11 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 11 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+Comparing branch 11 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+11 max mu: {'i': 11, 'j': 0, 'ninc': 4, 'muinc': 104.22394220846232, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': 'origin', 'val': '1'}], 'mu1': 239.73684210526315, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+11 min inc: {'i': 11, 'j': 0, 'ninc': 4, 'muinc': 104.22394220846232, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': 'origin', 'val': '1'}], 'mu1': 239.73684210526315, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 12 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 1
+Comparing branch 12 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 3
+Comparing branch 12 to branch 4
+Comparing branch 12 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 10
+Comparing branch 12 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('origin', '1')]
+Comparing branch 12 to branch 13
+Comparing branch 12 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$displacement', 2)]
+Comparing branch 12 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 12 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+Comparing branch 12 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+12 max mu: {'i': 12, 'j': 0, 'ninc': 4, 'muinc': 166.76078431372548, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+12 min inc: {'i': 12, 'j': 0, 'ninc': 4, 'muinc': 166.76078431372548, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 13 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 1
+Comparing branch 13 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 3
+Comparing branch 13 to branch 4
+Comparing branch 13 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 10
+Comparing branch 13 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('origin', '1')]
+Comparing branch 13 to branch 12
+Comparing branch 13 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$displacement', 2)]
+Comparing branch 13 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 13 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+Comparing branch 13 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2), ('$displacement', 2), ('$displacement', 1)]
+13 max mu: {'i': 13, 'j': 0, 'ninc': 4, 'muinc': 166.76078431372548, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+13 min inc: {'i': 13, 'j': 0, 'ninc': 4, 'muinc': 166.76078431372548, 'inc': [('$horsepower', 6), ('$horsepower', 4), ('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 14 to branch 0
+Comparing branch 14 to branch 1
+Comparing branch 14 to branch 2
+Comparing branch 14 to branch 3
+Comparing branch 14 to branch 4
+Comparing branch 14 to branch 5
+Comparing branch 14 to branch 6
+Comparing branch 14 to branch 7
+Comparing branch 14 to branch 8
+Comparing branch 14 to branch 9
+Comparing branch 14 to branch 10
+Comparing branch 14 to branch 11
+Comparing branch 14 to branch 12
+Comparing branch 14 to branch 13
+Comparing branch 14 to branch 15
+Comparing branch 14 to branch 16
+Comparing branch 14 to branch 17
+Comparing branch 14 to branch 18
+Comparing branch 14 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 14 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+14 max mu: {'i': 14, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+14 min inc: {'i': 14, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 15 to branch 0
+Comparing branch 15 to branch 1
+Comparing branch 15 to branch 2
+Comparing branch 15 to branch 3
+Comparing branch 15 to branch 4
+Comparing branch 15 to branch 5
+Comparing branch 15 to branch 6
+Comparing branch 15 to branch 7
+Comparing branch 15 to branch 8
+Comparing branch 15 to branch 9
+Comparing branch 15 to branch 10
+Comparing branch 15 to branch 11
+Comparing branch 15 to branch 12
+Comparing branch 15 to branch 13
+Comparing branch 15 to branch 14
+Comparing branch 15 to branch 16
+Comparing branch 15 to branch 17
+Comparing branch 15 to branch 18
+Comparing branch 15 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 15 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+15 max mu: {'i': 15, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+15 min inc: {'i': 15, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 16 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 1
+Comparing branch 16 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 3
+Comparing branch 16 to branch 4
+Comparing branch 16 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 10
+Comparing branch 16 to branch 11
+Comparing branch 16 to branch 12
+Comparing branch 16 to branch 13
+Comparing branch 16 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2)]
+Comparing branch 16 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2), ('$displacement', 1)]
+Comparing branch 16 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$horsepower', 1), ('$horsepower', 2), ('$displacement', 1)]
+16 max mu: {'i': 16, 'j': 0, 'ninc': 2, 'muinc': 60.360784313725446, 'inc': [('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$displacement', 'val': 2}], 'mu1': 283.6, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+16 min inc: {'i': 16, 'j': 0, 'ninc': 2, 'muinc': 60.360784313725446, 'inc': [('$horsepower', 1), ('$horsepower', 2)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$displacement', 'val': 2}], 'mu1': 283.6, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu2': 343.96078431372547}
+
+Comparing branch 17 to branch 0
+Comparing branch 17 to branch 1
+Comparing branch 17 to branch 2
+Comparing branch 17 to branch 3
+Comparing branch 17 to branch 4
+Comparing branch 17 to branch 5
+Comparing branch 17 to branch 6
+Comparing branch 17 to branch 7
+Comparing branch 17 to branch 8
+Comparing branch 17 to branch 9
+Comparing branch 17 to branch 10
+Comparing branch 17 to branch 11
+Comparing branch 17 to branch 12
+Comparing branch 17 to branch 13
+Comparing branch 17 to branch 14
+Comparing branch 17 to branch 15
+Comparing branch 17 to branch 16
+Comparing branch 17 to branch 18
+Comparing branch 17 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 17 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+17 max mu: {'i': 17, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+17 min inc: {'i': 17, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 18 to branch 0
+Comparing branch 18 to branch 1
+Comparing branch 18 to branch 2
+Comparing branch 18 to branch 3
+Comparing branch 18 to branch 4
+Comparing branch 18 to branch 5
+Comparing branch 18 to branch 6
+Comparing branch 18 to branch 7
+Comparing branch 18 to branch 8
+Comparing branch 18 to branch 9
+Comparing branch 18 to branch 10
+Comparing branch 18 to branch 11
+Comparing branch 18 to branch 12
+Comparing branch 18 to branch 13
+Comparing branch 18 to branch 14
+Comparing branch 18 to branch 15
+Comparing branch 18 to branch 16
+Comparing branch 18 to branch 17
+Comparing branch 18 to branch 19
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+Comparing branch 18 to branch 20
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2), ('$displacement', 1)]
+18 max mu: {'i': 18, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+18 min inc: {'i': 18, 'j': 19, 'ninc': 2, 'muinc': 17.896358543417364, 'inc': [('$displacement', 2), ('$displacement', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu2': 361.85714285714283}
+
+Comparing branch 19 to branch 0
+Comparing branch 19 to branch 1
+Comparing branch 19 to branch 2
+Comparing branch 19 to branch 3
+Comparing branch 19 to branch 4
+Comparing branch 19 to branch 5
+Comparing branch 19 to branch 6
+Comparing branch 19 to branch 7
+Comparing branch 19 to branch 8
+Comparing branch 19 to branch 9
+Comparing branch 19 to branch 10
+Comparing branch 19 to branch 11
+Comparing branch 19 to branch 12
+Comparing branch 19 to branch 13
+Comparing branch 19 to branch 14
+Comparing branch 19 to branch 15
+Comparing branch 19 to branch 16
+Comparing branch 19 to branch 17
+Comparing branch 19 to branch 18
+Comparing branch 19 to branch 20
+19 max mu: nil
+19 min inc: nil
+
+Comparing branch 20 to branch 0
+Comparing branch 20 to branch 1
+Comparing branch 20 to branch 2
+Comparing branch 20 to branch 3
+Comparing branch 20 to branch 4
+Comparing branch 20 to branch 5
+Comparing branch 20 to branch 6
+Comparing branch 20 to branch 7
+Comparing branch 20 to branch 8
+Comparing branch 20 to branch 9
+Comparing branch 20 to branch 10
+Comparing branch 20 to branch 11
+Comparing branch 20 to branch 12
+Comparing branch 20 to branch 13
+Comparing branch 20 to branch 14
+Comparing branch 20 to branch 15
+Comparing branch 20 to branch 16
+Comparing branch 20 to branch 17
+Comparing branch 20 to branch 18
+Comparing branch 20 to branch 19
+20 max mu: nil
+20 min inc: nil
+
+
+------------- MONITORS --------------------------
+Comparing branch 0 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 0 to branch 2
+Comparing branch 0 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 0 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 0 to branch 5
+Comparing branch 0 to branch 6
+Comparing branch 0 to branch 7
+Comparing branch 0 to branch 8
+Comparing branch 0 to branch 9
+Comparing branch 0 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 0 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 0 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 0 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 0 to branch 14
+Comparing branch 0 to branch 15
+Comparing branch 0 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 0 to branch 17
+Comparing branch 0 to branch 18
+Comparing branch 0 to branch 19
+Comparing branch 0 to branch 20
+0 max mu: {'i': 0, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+0 min inc: {'i': 0, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 1 to branch 0
+Comparing branch 1 to branch 2
+Comparing branch 1 to branch 3
+Comparing branch 1 to branch 4
+Comparing branch 1 to branch 5
+Comparing branch 1 to branch 6
+Comparing branch 1 to branch 7
+Comparing branch 1 to branch 8
+Comparing branch 1 to branch 9
+Comparing branch 1 to branch 10
+Comparing branch 1 to branch 11
+Comparing branch 1 to branch 12
+Comparing branch 1 to branch 13
+Comparing branch 1 to branch 14
+Comparing branch 1 to branch 15
+Comparing branch 1 to branch 16
+Comparing branch 1 to branch 17
+Comparing branch 1 to branch 18
+Comparing branch 1 to branch 19
+Comparing branch 1 to branch 20
+1 max mu: nil
+1 min inc: nil
+
+Comparing branch 2 to branch 0
+Comparing branch 2 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 2 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 2 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 2 to branch 5
+Comparing branch 2 to branch 6
+Comparing branch 2 to branch 7
+Comparing branch 2 to branch 8
+Comparing branch 2 to branch 9
+Comparing branch 2 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 2 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 2 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 2 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 2 to branch 14
+Comparing branch 2 to branch 15
+Comparing branch 2 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 2 to branch 17
+Comparing branch 2 to branch 18
+Comparing branch 2 to branch 19
+Comparing branch 2 to branch 20
+2 max mu: {'i': 2, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+2 min inc: {'i': 2, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 3 to branch 0
+Comparing branch 3 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 3 to branch 2
+Comparing branch 3 to branch 4
+Comparing branch 3 to branch 5
+Comparing branch 3 to branch 6
+Comparing branch 3 to branch 7
+Comparing branch 3 to branch 8
+Comparing branch 3 to branch 9
+Comparing branch 3 to branch 10
+Comparing branch 3 to branch 11
+Comparing branch 3 to branch 12
+Comparing branch 3 to branch 13
+Comparing branch 3 to branch 14
+Comparing branch 3 to branch 15
+Comparing branch 3 to branch 16
+Comparing branch 3 to branch 17
+Comparing branch 3 to branch 18
+Comparing branch 3 to branch 19
+Comparing branch 3 to branch 20
+3 max mu: {'i': 3, 'j': 1, 'ninc': 1, 'muinc': -25.734848484848484, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+3 min inc: {'i': 3, 'j': 1, 'ninc': 1, 'muinc': -25.734848484848484, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 4 to branch 0
+Comparing branch 4 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 4 to branch 2
+Comparing branch 4 to branch 3
+Comparing branch 4 to branch 5
+Comparing branch 4 to branch 6
+Comparing branch 4 to branch 7
+Comparing branch 4 to branch 8
+Comparing branch 4 to branch 9
+Comparing branch 4 to branch 10
+Comparing branch 4 to branch 11
+Comparing branch 4 to branch 12
+Comparing branch 4 to branch 13
+Comparing branch 4 to branch 14
+Comparing branch 4 to branch 15
+Comparing branch 4 to branch 16
+Comparing branch 4 to branch 17
+Comparing branch 4 to branch 18
+Comparing branch 4 to branch 19
+Comparing branch 4 to branch 20
+4 max mu: {'i': 4, 'j': 1, 'ninc': 1, 'muinc': -25.734848484848484, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+4 min inc: {'i': 4, 'j': 1, 'ninc': 1, 'muinc': -25.734848484848484, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$displacement', 'val': 16}, {'attr': '$displacement', 'val': 14}], 'mu1': 58.916666666666664, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 5 to branch 0
+Comparing branch 5 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 5 to branch 2
+Comparing branch 5 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 5 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 5 to branch 6
+Comparing branch 5 to branch 7
+Comparing branch 5 to branch 8
+Comparing branch 5 to branch 9
+Comparing branch 5 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 5 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 5 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 5 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 5 to branch 14
+Comparing branch 5 to branch 15
+Comparing branch 5 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 5 to branch 17
+Comparing branch 5 to branch 18
+Comparing branch 5 to branch 19
+Comparing branch 5 to branch 20
+5 max mu: {'i': 5, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+5 min inc: {'i': 5, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 6 to branch 0
+Comparing branch 6 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 6 to branch 2
+Comparing branch 6 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 6 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 6 to branch 5
+Comparing branch 6 to branch 7
+Comparing branch 6 to branch 8
+Comparing branch 6 to branch 9
+Comparing branch 6 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 6 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 6 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 6 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 6 to branch 14
+Comparing branch 6 to branch 15
+Comparing branch 6 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 6 to branch 17
+Comparing branch 6 to branch 18
+Comparing branch 6 to branch 19
+Comparing branch 6 to branch 20
+6 max mu: {'i': 6, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+6 min inc: {'i': 6, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 7 to branch 0
+Comparing branch 7 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 7 to branch 2
+Comparing branch 7 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 7 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 7 to branch 5
+Comparing branch 7 to branch 6
+Comparing branch 7 to branch 8
+Comparing branch 7 to branch 9
+Comparing branch 7 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 7 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 7 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 7 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 7 to branch 14
+Comparing branch 7 to branch 15
+Comparing branch 7 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 7 to branch 17
+Comparing branch 7 to branch 18
+Comparing branch 7 to branch 19
+Comparing branch 7 to branch 20
+7 max mu: {'i': 7, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+7 min inc: {'i': 7, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 8 to branch 0
+Comparing branch 8 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 8 to branch 2
+Comparing branch 8 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 8 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 8 to branch 5
+Comparing branch 8 to branch 6
+Comparing branch 8 to branch 7
+Comparing branch 8 to branch 9
+Comparing branch 8 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 8 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 8 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 8 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 8 to branch 14
+Comparing branch 8 to branch 15
+Comparing branch 8 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 8 to branch 17
+Comparing branch 8 to branch 18
+Comparing branch 8 to branch 19
+Comparing branch 8 to branch 20
+8 max mu: {'i': 8, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+8 min inc: {'i': 8, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 9 to branch 0
+Comparing branch 9 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 9 to branch 2
+Comparing branch 9 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 9 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 9 to branch 5
+Comparing branch 9 to branch 6
+Comparing branch 9 to branch 7
+Comparing branch 9 to branch 8
+Comparing branch 9 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 9 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 9 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 9 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 9 to branch 14
+Comparing branch 9 to branch 15
+Comparing branch 9 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 9 to branch 17
+Comparing branch 9 to branch 18
+Comparing branch 9 to branch 19
+Comparing branch 9 to branch 20
+9 max mu: {'i': 9, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+9 min inc: {'i': 9, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 10 to branch 0
+Comparing branch 10 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 10 to branch 2
+Comparing branch 10 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 10 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 10 to branch 5
+Comparing branch 10 to branch 6
+Comparing branch 10 to branch 7
+Comparing branch 10 to branch 8
+Comparing branch 10 to branch 9
+Comparing branch 10 to branch 11
+Comparing branch 10 to branch 12
+Comparing branch 10 to branch 13
+Comparing branch 10 to branch 14
+Comparing branch 10 to branch 15
+Comparing branch 10 to branch 16
+Comparing branch 10 to branch 17
+Comparing branch 10 to branch 18
+Comparing branch 10 to branch 19
+Comparing branch 10 to branch 20
+10 max mu: {'i': 10, 'j': 1, 'ninc': 1, 'muinc': -144.0181818181818, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+10 min inc: {'i': 10, 'j': 1, 'ninc': 1, 'muinc': -144.0181818181818, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 11 to branch 0
+Comparing branch 11 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 11 to branch 2
+Comparing branch 11 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 11 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 11 to branch 5
+Comparing branch 11 to branch 6
+Comparing branch 11 to branch 7
+Comparing branch 11 to branch 8
+Comparing branch 11 to branch 9
+Comparing branch 11 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 5), ('$displacement', 9)]
+Comparing branch 11 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 5), ('$displacement', 9)]
+Comparing branch 11 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 5), ('$displacement', 9)]
+Comparing branch 11 to branch 14
+Comparing branch 11 to branch 15
+Comparing branch 11 to branch 16
+Comparing branch 11 to branch 17
+Comparing branch 11 to branch 18
+Comparing branch 11 to branch 19
+Comparing branch 11 to branch 20
+11 max mu: {'i': 11, 'j': 1, 'ninc': 1, 'muinc': -206.55502392344496, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': 'origin', 'val': '1'}], 'mu1': 239.73684210526315, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+11 min inc: {'i': 11, 'j': 1, 'ninc': 1, 'muinc': -206.55502392344496, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': 'origin', 'val': '1'}], 'mu1': 239.73684210526315, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 12 to branch 0
+Comparing branch 12 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 12 to branch 2
+Comparing branch 12 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 12 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 12 to branch 5
+Comparing branch 12 to branch 6
+Comparing branch 12 to branch 7
+Comparing branch 12 to branch 8
+Comparing branch 12 to branch 9
+Comparing branch 12 to branch 10
+Comparing branch 12 to branch 11
+Comparing branch 12 to branch 13
+Comparing branch 12 to branch 14
+Comparing branch 12 to branch 15
+Comparing branch 12 to branch 16
+Comparing branch 12 to branch 17
+Comparing branch 12 to branch 18
+Comparing branch 12 to branch 19
+Comparing branch 12 to branch 20
+12 max mu: {'i': 12, 'j': 1, 'ninc': 1, 'muinc': -144.0181818181818, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+12 min inc: {'i': 12, 'j': 1, 'ninc': 1, 'muinc': -144.0181818181818, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 13 to branch 0
+Comparing branch 13 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 13 to branch 2
+Comparing branch 13 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 13 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 13 to branch 5
+Comparing branch 13 to branch 6
+Comparing branch 13 to branch 7
+Comparing branch 13 to branch 8
+Comparing branch 13 to branch 9
+Comparing branch 13 to branch 10
+Comparing branch 13 to branch 11
+Comparing branch 13 to branch 12
+Comparing branch 13 to branch 14
+Comparing branch 13 to branch 15
+Comparing branch 13 to branch 16
+Comparing branch 13 to branch 17
+Comparing branch 13 to branch 18
+Comparing branch 13 to branch 19
+Comparing branch 13 to branch 20
+13 max mu: {'i': 13, 'j': 1, 'ninc': 1, 'muinc': -144.0181818181818, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+13 min inc: {'i': 13, 'j': 1, 'ninc': 1, 'muinc': -144.0181818181818, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$displacement', 'val': 6}, {'attr': '$displacement', 'val': 5}, {'attr': '$displacement', 'val': 9}], 'mu1': 177.2, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 14 to branch 0
+Comparing branch 14 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 14 to branch 2
+Comparing branch 14 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 14 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 14 to branch 5
+Comparing branch 14 to branch 6
+Comparing branch 14 to branch 7
+Comparing branch 14 to branch 8
+Comparing branch 14 to branch 9
+Comparing branch 14 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 14 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 14 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 14 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 14 to branch 15
+Comparing branch 14 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 14 to branch 17
+Comparing branch 14 to branch 18
+Comparing branch 14 to branch 19
+Comparing branch 14 to branch 20
+14 max mu: {'i': 14, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+14 min inc: {'i': 14, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 15 to branch 0
+Comparing branch 15 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 15 to branch 2
+Comparing branch 15 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 15 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 15 to branch 5
+Comparing branch 15 to branch 6
+Comparing branch 15 to branch 7
+Comparing branch 15 to branch 8
+Comparing branch 15 to branch 9
+Comparing branch 15 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 15 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 15 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 15 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 15 to branch 14
+Comparing branch 15 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 15 to branch 17
+Comparing branch 15 to branch 18
+Comparing branch 15 to branch 19
+Comparing branch 15 to branch 20
+15 max mu: {'i': 15, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+15 min inc: {'i': 15, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 16 to branch 0
+Comparing branch 16 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 16 to branch 2
+Comparing branch 16 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 16 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 16 to branch 5
+Comparing branch 16 to branch 6
+Comparing branch 16 to branch 7
+Comparing branch 16 to branch 8
+Comparing branch 16 to branch 9
+Comparing branch 16 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 16 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 16 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 16 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 16 to branch 14
+Comparing branch 16 to branch 15
+Comparing branch 16 to branch 17
+Comparing branch 16 to branch 18
+Comparing branch 16 to branch 19
+Comparing branch 16 to branch 20
+16 max mu: {'i': 16, 'j': 1, 'ninc': 1, 'muinc': -250.41818181818184, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$displacement', 'val': 2}], 'mu1': 283.6, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+16 min inc: {'i': 16, 'j': 1, 'ninc': 1, 'muinc': -250.41818181818184, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$displacement', 'val': 2}], 'mu1': 283.6, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 17 to branch 0
+Comparing branch 17 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 17 to branch 2
+Comparing branch 17 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 17 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 17 to branch 5
+Comparing branch 17 to branch 6
+Comparing branch 17 to branch 7
+Comparing branch 17 to branch 8
+Comparing branch 17 to branch 9
+Comparing branch 17 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 17 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 17 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 17 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 17 to branch 14
+Comparing branch 17 to branch 15
+Comparing branch 17 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 17 to branch 18
+Comparing branch 17 to branch 19
+Comparing branch 17 to branch 20
+17 max mu: {'i': 17, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+17 min inc: {'i': 17, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 18 to branch 0
+Comparing branch 18 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 18 to branch 2
+Comparing branch 18 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 18 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 18 to branch 5
+Comparing branch 18 to branch 6
+Comparing branch 18 to branch 7
+Comparing branch 18 to branch 8
+Comparing branch 18 to branch 9
+Comparing branch 18 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 18 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 18 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 18 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 18 to branch 14
+Comparing branch 18 to branch 15
+Comparing branch 18 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 2)]
+Comparing branch 18 to branch 17
+Comparing branch 18 to branch 19
+Comparing branch 18 to branch 20
+18 max mu: {'i': 18, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+18 min inc: {'i': 18, 'j': 1, 'ninc': 1, 'muinc': -310.7789661319073, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}], 'mu1': 343.96078431372547, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 19 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 19 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 19 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 19 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 19 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 19 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 19 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 19 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 19 to branch 20
+19 max mu: {'i': 19, 'j': 1, 'ninc': 1, 'muinc': -328.67532467532465, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu1': 361.85714285714283, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+19 min inc: {'i': 19, 'j': 1, 'ninc': 1, 'muinc': -328.67532467532465, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu1': 361.85714285714283, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+
+Comparing branch 20 to branch 0
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 1
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$model', 1)]
+Comparing branch 20 to branch 2
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 3
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 20 to branch 4
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 16), ('$displacement', 14)]
+Comparing branch 20 to branch 5
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 6
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 7
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 8
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 9
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 10
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 20 to branch 11
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('origin', '1')]
+Comparing branch 20 to branch 12
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 20 to branch 13
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+    Delta: [('$displacement', 6), ('$displacement', 5), ('$displacement', 9)]
+Comparing branch 20 to branch 14
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 15
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 16
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 17
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 18
+    branch2 better than branch 1...
+    Effect size: positive, they are different
+Comparing branch 20 to branch 19
+20 max mu: {'i': 20, 'j': 1, 'ninc': 1, 'muinc': -328.67532467532465, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu1': 361.85714285714283, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
+20 min inc: {'i': 20, 'j': 1, 'ninc': 1, 'muinc': -328.67532467532465, 'inc': [('$model', 1)], 'branch1': [{'attr': '$horsepower', 'val': 11}, {'attr': '$horsepower', 'val': 10}, {'attr': '$horsepower', 'val': 8}, {'attr': '$horsepower', 'val': 9}, {'attr': '$horsepower', 'val': 7}, {'attr': '$horsepower', 'val': 3}, {'attr': '$horsepower', 'val': 5}, {'attr': '$horsepower', 'val': 6}, {'attr': '$horsepower', 'val': 4}, {'attr': '$horsepower', 'val': 1}, {'attr': '$horsepower', 'val': 2}, {'attr': '$displacement', 'val': 2}, {'attr': '$displacement', 'val': 1}], 'mu1': 361.85714285714283, 'branch2': [{'attr': '$horsepower', 'val': 11}, {'attr': '$model', 'val': 1}], 'mu2': 33.18181818181818}
